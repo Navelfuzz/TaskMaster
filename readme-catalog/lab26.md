@@ -26,20 +26,20 @@ The main page should be built out to match the wireframe. In particular, it shou
 at the top of the page, an image to mock the “my tasks” view, and buttons at the bottom of the page 
 to allow going to the “add tasks” and “all tasks” page.
 
-![Homepage](wireframes/lab26/taskmaster_homepage.png)
+![Homepage](../wireframes/lab26/taskmaster_homepage.png)
 
 ### Add a Task
 
 On the “Add a Task” page, allow users to type in details about a new task, specifically a title and 
 a body. When users click the “submit” button, show a “submitted!” label on the page.
 
-![Add a Task](wireframes/lab26/taskmaster_add_task.png)
+![Add a Task](../wireframes/lab26/taskmaster_add_task.png)
 
 ### All Tasks
 
 The all tasks page should just be an image with a back button; it needs no functionality.
 
-![All Tasks](wireframes/lab26/taskmaster_all_tasks.png)
+![All Tasks](../wireframes/lab26/taskmaster_all_tasks.png)
 
 ## Documentation
 
@@ -59,3 +59,23 @@ you’re writing good unit tests for anything unit-testable in your code.
 
 Consider the styling for this app. Decide on a color scheme and font families to use. (You’ll 
 thank yourself later for doing this work now!)
+
+
+___
+
+## From the previous lab's master README.md
+
+## Links/Notes/Info
+
+*Resources from the Lab Assignment Materials*
+
+[Android Buttons](https://developer.android.com/guide/topics/ui/controls/button.html)
+
+[Android UI Events](https://developer.android.com/guide/topics/ui/ui-events.html)
+
+
+## Screenshots for Lab: Class 26
+
+<img src="../screenshots/lab26/Homepage SS 26.png" alt="homepageScreen" width="200"/> 
+<img src="../screenshots/lab26/Add Task SS 26.png" alt="addTask" width="200"/> 
+<img src="../screenshots/lab26/All Tasks SS 26.png" alt="allTasks" width="200 "/>
