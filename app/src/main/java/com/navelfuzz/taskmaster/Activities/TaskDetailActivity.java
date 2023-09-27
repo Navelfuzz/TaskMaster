@@ -22,17 +22,33 @@ public class TaskDetailActivity extends AppCompatActivity {
 
     void setupTaskNameTextView(){
         Intent callingIntent = getIntent();
-        String taskNameString = null;
-        if(callingIntent != null){
-            taskNameString = callingIntent.getStringExtra(MainActivity.TASK_NAME_TAG);
+        String taskNameStr = null;
+        String taskDescStr = null;
+        String taskStatusStr = null;
+        if(callingIntent != null) {
+            taskNameStr = callingIntent.getStringExtra(MainActivity.TASK_NAME_TAG);
+            taskDescStr = callingIntent.getStringExtra(MainActivity.TASK_DESC_TAG);
+            taskStatusStr = callingIntent.getStringExtra(MainActivity.TASK_STATUS_TAG);
         }
 
-         TextView taskNameTextView = (TextView) findViewById(R.id.TaskDetailActivityLabelTextView);
-         if(taskNameString != null && !taskNameString.equals("")){
-         taskNameTextView.setText(taskNameString);
-         } else {
-            taskNameTextView.setText("No task name provided");
-         }
+        TextView taskNameTextView = (TextView) findViewById(R.id.TaskDetailActivityLabelTextView);
+        TextView taskDescTextView = (TextView) findViewById(R.id.TaskDetailActivityTaskDescription);
+        TextView taskStatusTextView = (TextView) findViewById(R.id.TaskDetailActivityTaskStatus);
+        if(taskNameStr != null && !taskNameStr.equals("")){
+            taskNameTextView.setText(taskNameStr);
+        } else {
+            taskNameTextView.setText("No Task Name");
+        }
+        if(taskDescStr != null && !taskDescStr.equals("")){
+            taskDescTextView.setText(taskDescStr);
+        } else {
+            taskDescTextView.setText("No Task Description");
+        }
+        if(taskStatusStr != null && !taskStatusStr.equals("")){
+            taskStatusTextView.setText(taskStatusStr);
+        } else {
+            taskStatusTextView.setText("No Task Status");
+        }
     }
 }
 
