@@ -29,7 +29,11 @@ data storage and hosting methods and adds components and functionality over time
 In order to run the application, you must run it through an Android Emulator. 
 It was constructed using a Pixel 3a XL emulator with a minimum android API 24 and target of 33.
 
-***Lab 32: Espresso Tests Additional Instructions:***
+***Lab 32 & up: Amplify AWS and Dates***
+In order to operate the application one must use an Android Emulator with a minimum of 26 for features to work properly.
+
+
+***Lab 31: Espresso Tests Additional Instructions:***
 To run tests (and view them running), run emulator within Android Studio. All Test `.java` files are located: `app/src/androidTest/java/com/navelfuzz/taskmaster/*` 
 
 Or
@@ -40,7 +44,34 @@ Use the `.gradlew/*` CLI command
 
 ### Class 32: Amplify AWS
 
-1. Branch `lab32a`: Deletion of Room and preparations for AWS implementation.
+#### Branch `lab32a`: Deletion of Room and preparations for AWS implementation.
+ 
+1. Followed steps for adding Amplify API to application
+   * Created Amplify AWS account and IAM User
+   * Ran the following Amplify CLI commands:
+     * `amplify configure`
+       * Added Amplify Gradle dependencies to /app `build.gradle` 
+     * `amplify init`
+     * `amplify add api`
+       * `amplify api update`: to verify error detection: off
+     * `amplify push`
+   * Ran `amplify codegen models` to generate models from GraphQL schema
+2. Created `TaskMasterAmplifyApplication.java` to configure Amplify
+3. Modified `AddTaskActivity.java` to add tasks to DynamoDB
+4. Modified `MainActivity.java` to display tasks from DynamoDB
+    * Also modified `ViewAdapter.java` to display tasks from DynamoDB
+    * Also modified `TaskListFragment.java` to display tasks from DynamoDB
+5. Modified `Task.java` to be a model for DynamoDB
+    * As well as `TaskStatusEnum.java` and other Amplify generated files via schema development.
+
+#### Branch `lab32b`: Setup Amplify for application which utilizes GraphQL API, DynamoDB.
+
+1. Deleted Room's Gradle dependencies
+2. Deleted Database Class
+3. Deleted Dao class
+4. Removed @Entity & @PrimaryKey annotations
+5. Deleted database variables
+6. Commented out dao usages
 
 ### Class 31: Testing Views with Espresso
 
@@ -130,7 +161,8 @@ Use the `.gradlew/*` CLI command
 
 ## Screenshots for Lab: Class 32
 
-<img src="screenshots/lab32/XXXXXXX.png" alt="XXXXXXX" width="200"/> 
+<img src="screenshots/lab32/homepage32.png" alt="homepage view lab32" width="150"/> 
+<img src="screenshots/lab32/amplifyTable.png" alt="amplify aws table inputs" width="600"/>
 
 
 ### Idiot's guide (Meaning me.. So I don't forget a few things) to Navigation: Important Locations

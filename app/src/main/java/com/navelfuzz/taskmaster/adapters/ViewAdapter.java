@@ -12,16 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.navelfuzz.taskmaster.R;
 import com.navelfuzz.taskmaster.MainActivity;
-import com.navelfuzz.taskmaster.models.Task;
 import com.navelfuzz.taskmaster.activities.TaskDetailActivity;
 
+import com.amplifyframework.datastore.generated.model.Task;
 
 import java.util.List;
+import java.util.Locale;
 
 public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.TaskListViewHolder>{
-
     List<Task> tasks;
-
     Context callingActivity;
 
     public ViewAdapter(List<Task> tasks, Context callingActivity){
@@ -56,6 +55,27 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.TaskListViewHo
     public int getItemCount(){
         return tasks.size();
     }
+
+//    private String formatDateString(Task task){
+//        DateFormat dateCreatedIso8601InputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault());
+//        dateCreatedIso8601InputFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+//        DateFormat dateCreatedOutputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        dateCreatedOutputFormat.SetTimeZone(TimeZone.getDefault());
+//        String dateCreatedString = "";
+//
+//        try {
+//            Date dateCreatedJavaDate = dateCreatedIso8601InputFormat.parse(task.getDateCreated().format());
+//            if (dateCreatedJavaDate != null) {
+//                dateCreatedString = dateCreatedOutputFormat.format(dateCreatedJavaDate);
+//            }
+//            } catch (ParseException e) {
+//                e.printStackTrace();
+//            }
+//        return dateCreatedString;
+//    }
+
+
+
 
     public static class TaskListViewHolder extends RecyclerView.ViewHolder {
         public TaskListViewHolder(@NonNull View itemView){
