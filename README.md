@@ -3,6 +3,7 @@
 * [Lab 26: Taskmaster Initial](#class-26-is-the-initial-buildout-which-had-the-following-requirements-)
 * [Lab 27: Adding Data](#class-27--adding-data-lab)
 * [Lab 28: RecyclerViews](#class-28--recyclerviews)
+* [Lab 29: Room](#class-29--room)
 
 ## Description
 
@@ -15,6 +16,17 @@ In order to run the application, you must run it through an Android Emulator.
 It was constructed using a Pixel 3a XL emulator with a minimum android API 24 and target of 33.
 
 ## Change Log
+
+### Class 29: Room 
+
+1. Task Model and Room
+   * Following the directions provided in the Android documentation, set up Room in your application, and modify your Task class to be an Entity.
+2. Add Task Form
+    * Modify your Add Task form to save the data entered in as a Task in your local database.
+3. Homepage
+    * Refactor your homepage’s RecyclerView to display all Task entities in your database.
+4. Detail Page
+    * Ensure that the description and status of a tapped task are also displayed on the detail page, in addition to the title. (Note that you can accomplish this by passing along the entire Task entity, or by passing along only its ID in the intent.)
 
 #### Class 28: RecyclerViews
 
@@ -67,10 +79,10 @@ It was constructed using a Pixel 3a XL emulator with a minimum android API 24 an
 
 [//]: # (## Links/Notes/Info)
 
-## Screenshots for Lab: Class 28
+## Screenshots for Lab: Class 29
 
-<img src="screenshots/lab28/homeRecyclerView.png" alt="home recyclerview" width="200"/> 
-<img src="screenshots/lab28/recyclerViewTaskDetail.png" alt="task detail" width="200"/> 
+<img src="screenshots/lab29/homeRoomList.png" alt="home recyclerview" width="200"/> 
+<img src="screenshots/lab29/detailRoomItem.png" alt="task detail" width="200"/> 
 
 ### Idiot's guide (Meaning me.. So I don't forget a few things) to Navigation: Important Locations
 

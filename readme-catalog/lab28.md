@@ -6,7 +6,7 @@ Today, you’ll refactor your homepage to look snazzy, with a RecyclerView full 
 
 ## Setup
 
-Continue working in your taskmaster repository.
+Continue working in your `taskmaster` repository.
 
 ## Resources
 

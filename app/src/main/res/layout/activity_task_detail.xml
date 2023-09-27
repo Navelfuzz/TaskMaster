@@ -18,10 +18,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/largeTextView"
+        android:id="@+id/TaskDetailActivityTaskDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:gravity="center|center_horizontal|center_vertical"
         android:padding="16dp"
         android:text="@string/lorem_ipsum"
         android:textColor="@android:color/black"
@@ -29,4 +30,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TaskDetailActivityLabelTextView" />
+
+    <TextView
+        android:id="@+id/TaskDetailActivityTaskStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TaskDetailActivityTaskDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>
