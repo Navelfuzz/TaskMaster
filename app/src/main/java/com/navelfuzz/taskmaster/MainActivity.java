@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.preference.PreferenceManager;
-import androidx.room.Room;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,7 +21,6 @@ import com.navelfuzz.taskmaster.activities.AddTaskActivity;
 import com.navelfuzz.taskmaster.activities.AllTasksActivity;
 import com.navelfuzz.taskmaster.activities.SettingsActivity;
 import com.navelfuzz.taskmaster.adapters.ViewAdapter;
-import com.navelfuzz.taskmaster.database.TaskDatabase;
 import com.navelfuzz.taskmaster.models.Task;
 
 import java.util.ArrayList;
@@ -36,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences preferences;
 
     List<Task> tasks = new ArrayList<>();
-    TaskDatabase taskDatabase;
-    public static final String DATABASE_NAME = "navelfuzz_tasks";
     ViewAdapter adapter;
 
     @Override
@@ -47,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        setupDatabase();
         setupSettingsButton();
         setupAddTaskButton();
         setupAllTasksButton();
@@ -113,17 +108,10 @@ public class MainActivity extends AppCompatActivity {
         taskListRecyclerView.setAdapter(adapter);
     }
 
-    void setupDatabase(){
-        taskDatabase = Room.databaseBuilder(
-                getApplicationContext(), TaskDatabase.class, DATABASE_NAME)
-                .fallbackToDestructiveMigration().allowMainThreadQueries().build();
-
-        tasks = taskDatabase.taskDao().findAll();
-    }
 
     void updateTasksListFromDatabase(){
-        tasks.clear();
-        tasks.addAll(taskDatabase.taskDao().findAll());
+//        tasks.clear();
+//        tasks.addAll(taskDatabase.taskDao().findAll());
         adapter.notifyDataSetChanged();
     }
 }

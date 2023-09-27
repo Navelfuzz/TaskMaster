@@ -29,9 +29,7 @@ data storage and hosting methods and adds components and functionality over time
 In order to run the application, you must run it through an Android Emulator. 
 It was constructed using a Pixel 3a XL emulator with a minimum android API 24 and target of 33.
 
-*app-debug.apk in root file*
-
-***Lab 31: Espresso Tests Additional Instructions:***
+***Lab 32: Espresso Tests Additional Instructions:***
 To run tests (and view them running), run emulator within Android Studio. All Test `.java` files are located: `app/src/androidTest/java/com/navelfuzz/taskmaster/*` 
 
 Or
@@ -41,6 +39,8 @@ Use the `.gradlew/*` CLI command
 ## Change Log
 
 ### Class 32: Amplify AWS
+
+1. Branch `lab32a`: Deletion of Room and preparations for AWS implementation.
 
 ### Class 31: Testing Views with Espresso
 
@@ -128,11 +128,9 @@ Use the `.gradlew/*` CLI command
 
 [//]: # (## Links/Notes/Info)
 
-## Screenshots for Lab: Class 31
+## Screenshots for Lab: Class 32
 
-<img src="screenshots/lab31/mainActivityTest.png" alt="MainActivityTest" width="800"/>
-<img src="screenshots/lab31/mainActivityTest2.png" alt="MainActivityTest2" width="800"/>
-<img src="screenshots/lab31/userNameTest.png" alt="UserNameTest" width="800"/>
+<img src="screenshots/lab32/XXXXXXX.png" alt="XXXXXXX" width="200"/> 
 
 
 ### Idiot's guide (Meaning me.. So I don't forget a few things) to Navigation: Important Locations
