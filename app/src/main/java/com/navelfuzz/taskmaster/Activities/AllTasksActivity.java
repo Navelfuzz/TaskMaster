@@ -1,4 +1,4 @@
-package com.navelfuzz.taskmaster.Activities;
+package com.navelfuzz.taskmaster.activities;
 
 import android.os.Bundle;
 import com.navelfuzz.taskmaster.R;

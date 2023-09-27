@@ -1,7 +1,8 @@
 # TaskMaster Lab Series Main Readme/TOC
 
-[//]: # (To do: insert link to Class 26 Changelog)
-[//]: # (To do: also do so for the Class 27 Changelog)
+* [Lab 26: Taskmaster Initial](#class-26-is-the-initial-buildout-which-had-the-following-requirements-)
+* [Lab 27: Adding Data](#class-27--adding-data-lab)
+* [Lab 28: RecyclerViews](#class-28--recyclerviews)
 
 ## Description
 
@@ -10,10 +11,25 @@ data storage and hosting methods and adds components and functionality over time
 
 ### Instructions
 
-In order to run the Class 26 version of the application, you must run it through an Android Emulator. 
+In order to run the application, you must run it through an Android Emulator. 
 It was constructed using a Pixel 3a XL emulator with a minimum android API 24 and target of 33.
 
 ## Change Log
+
+#### Class 28: RecyclerViews
+
+1. Task Model
+   * Create a Task class. A task should have:
+        * Title
+        * Body
+        * State (new, assigned, in progress, complete)
+2. Homepage
+   * Refactor the homepage to use a RecyclerView for displaying Task data (hardcoded task data for now)
+   * Some Steps
+     * Create a ViewAdapter class that displays data from a list of Tasks.
+     * In your MainActivity, create at least three hardcoded Task instances and use those to populate your RecyclerView/ViewAdapter.
+   * Ensure that you can tap on any one of the Tasks in the RecyclerView and it will appropriately launch the detail page with the correct Task title displayed.
+
 
 #### Class 27: Adding Data Lab
 1. Task Details Page
@@ -49,19 +65,12 @@ It was constructed using a Pixel 3a XL emulator with a minimum android API 24 an
    
 **All these requirements were implemented**
 
-## Links/Notes/Info
+[//]: # (## Links/Notes/Info)
 
-*Resources from the Lab Assignment Materials*
-*[Android SharedPreferences](https://developer.android.com/training/data-storage/shared-preferences)
-*[The Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
-*[Android Studio User Guide](https://developer.android.com/studio/intro)
+## Screenshots for Lab: Class 28
 
-## Screenshots for Lab: Class 27
-
-<img src="screenshots/lab27/HompageSS27.png" alt="homepageScreen" width="200"/> 
-<img src="screenshots/lab27/SettingsSS27.png" alt="settingsPage" width="200"/> 
-<img src="screenshots/lab27/TaskDetailSS27.png" alt="taskDetails" width="200 "/>
-
+<img src="screenshots/lab28/homeRecyclerView.png" alt="home recyclerview" width="200"/> 
+<img src="screenshots/lab28/recyclerViewTaskDetail.png" alt="task detail" width="200"/> 
 
 ### Idiot's guide (Meaning me.. So I don't forget a few things) to Navigation: Important Locations
 
