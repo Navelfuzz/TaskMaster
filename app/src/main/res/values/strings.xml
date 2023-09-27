@@ -12,4 +12,11 @@
     <string name="add_task_total_tasks">Total tasks: 0</string>
     <string name="all_tasks_activity_title">All Tasks</string>
     <string name="all_tasks_placeholder_img">All Tasks Placeholder img</string>
+    <string name="my_task">My Task</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tristique, libero sed volutpat fringilla...</string>
+    <string name="taskOne">Task One</string>
+    <string name="taskTwo">Task Two</string>
+    <string name="taskThree">Task Three</string>
+    <string name="add_username">Username</string>
+    <string name="save">Save</string>
 </resources>
