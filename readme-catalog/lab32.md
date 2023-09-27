@@ -31,11 +31,16 @@ Modify your Add Task form to save the data entered in as a Task to DynamoDB.
 
 Refactor your homepage’s RecyclerView to display all Task entities in DynamoDB.
 
-## Documentation
+#### Documentation
 
 Update your daily change log with today’s changes.
 
-## Testing
+#### Testing
 
 Ensure that all Espresso tests are still passing (since we haven’t changed anything about the UI 
 today, no new updates required).
+
+### Screenshots
+
+<img src="../screenshots/lab32/homepage32.png" alt="homepage view lab32" width="150"/> 
+<img src="../screenshots/lab32/amplifyTable.png" alt="amplify aws table inputs" width="600"/> 

@@ -14,7 +14,7 @@ public class TaskListFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static TaskListFragment newInstance(){
+    public static TaskListFragment newInstance(String param1, String param2){
         TaskListFragment fragment = new TaskListFragment();
         return fragment;
     }
