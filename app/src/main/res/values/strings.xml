@@ -19,4 +19,5 @@
     <string name="taskThree">Task Three</string>
     <string name="add_username">Username</string>
     <string name="save">Save</string>
+    <string name="blank_task_name" />
 </resources>
