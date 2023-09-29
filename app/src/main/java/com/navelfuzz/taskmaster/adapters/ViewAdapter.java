@@ -56,27 +56,6 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.TaskListViewHo
         return tasks.size();
     }
 
-//    private String formatDateString(Task task){
-//        DateFormat dateCreatedIso8601InputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault());
-//        dateCreatedIso8601InputFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-//        DateFormat dateCreatedOutputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        dateCreatedOutputFormat.SetTimeZone(TimeZone.getDefault());
-//        String dateCreatedString = "";
-//
-//        try {
-//            Date dateCreatedJavaDate = dateCreatedIso8601InputFormat.parse(task.getDateCreated().format());
-//            if (dateCreatedJavaDate != null) {
-//                dateCreatedString = dateCreatedOutputFormat.format(dateCreatedJavaDate);
-//            }
-//            } catch (ParseException e) {
-//                e.printStackTrace();
-//            }
-//        return dateCreatedString;
-//    }
-
-
-
-
     public static class TaskListViewHolder extends RecyclerView.ViewHolder {
         public TaskListViewHolder(@NonNull View itemView){
             super(itemView);
