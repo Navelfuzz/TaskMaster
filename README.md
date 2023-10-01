@@ -7,7 +7,7 @@
 * [Lab 31: Espresso Tests](#class-31-testing-views-with-espresso)
 * [Lab 32: Amplify AWS](#class-32--amplify-aws)
 * [Lab 33: Another Day, Another Model](#class-33-another-day-another-model)
-
+* [Lab 34: Polish and Publish TaskMaster](#class-34-polish-and-publish-taskmaster)
 ___
 
 ### Directory of individual lab Readme files: [readme-catalog](/readme-catalog/)
@@ -19,6 +19,7 @@ ___
 * [Lab 31: Espresso Tests](/readme-catalog/lab31.md)
 * [Lab 32: Amplify AWS](/readme-catalog/lab32.md)
 * [Lab 33: Another Day, Another Model](/readme-catalog/lab33.md)
+* [Lab 34: Polish and Publish TaskMaster](/readme-catalog/lab34.md)
 ___
 
 ## Description
@@ -44,6 +45,14 @@ Use the `.gradlew/*` CLI command
 
 ## Change Log
 Screenshots for current lab always at bottom of this page
+
+### Class 34: Polish and Publish TaskMaster
+1. Created `app-release.aab` file withing `app/build/outputs/bundle/release` directory
+2. Created Google Play Store account
+3. Created Google Play Store listing for TaskMaster
+4. Uploaded `app-release.aab` file to Google Play Store
+5. Awaiting Identity confirmation (01OCT) to Publish TaskMaster to Google Play Store
+6. Named app `TaskMaster Basic` for Google Play Store
 
 ### Class 33: Another Day, Another Model
 
@@ -172,10 +181,8 @@ Screenshots for current lab always at bottom of this page
 
 [//]: # (## Links/Notes/Info)
 
-## Screenshots for Lab: Class 33
+## Screenshots for Lab: Class 34
 
-<img src="screenshots/lab33/alphaGroupSS.png" alt="Alpha Team Tasks" width="200"/> 
-<img src="screenshots/lab33/bravoGroupSS.png" alt="Bravo Team Tasks" width="200"/> 
-<img src="screenshots/lab33/deltaGroupSS.png" alt="Delta Team Tasks" width="200"/> 
-<img src="screenshots/lab33/awsTaskTableSS.png" alt="AWS Tasks" width="800"/> 
-<img src="screenshots/lab33/awsTeamTableSS.png" alt="AWS Teams" width="800"/> 
+<img src="screenshots/lab34/releaseError.png" alt="Release Error" width="650"/> 
+<img src="screenshots/lab34/identityConfirmation.png" alt="Google Identity Confirmation" width="650"/> 
+
