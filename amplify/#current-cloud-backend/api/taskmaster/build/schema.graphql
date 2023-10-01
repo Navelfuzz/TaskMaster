@@ -1,0 +1,319 @@
+type Task {
+  id: ID!
+  title: String!
+  body: String
+  dateCreated: AWSDateTime
+  status: TaskStatusEnum
+  teamId: ID!
+  team: Team
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+enum TaskStatusEnum {
+  New
+  Assigned
+  In_Progress
+  Complete
+}
+
+type Team {
+  id: ID!
+  teamName: String!
+  tasks(title: ModelStringKeyConditionInput, filter: ModelTaskFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelTaskConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelTaskConnection {
+  items: [Task]!
+  nextToken: String
+}
+
+input ModelTaskStatusEnumInput {
+  eq: TaskStatusEnum
+  ne: TaskStatusEnum
+}
+
+input ModelTaskFilterInput {
+  id: ModelIDInput
+  title: ModelStringInput
+  body: ModelStringInput
+  dateCreated: ModelStringInput
+  status: ModelTaskStatusEnumInput
+  teamId: ModelIDInput
+  and: [ModelTaskFilterInput]
+  or: [ModelTaskFilterInput]
+  not: ModelTaskFilterInput
+}
+
+type Query {
+  getTask(id: ID!): Task
+  listTasks(filter: ModelTaskFilterInput, limit: Int, nextToken: String): ModelTaskConnection
+  getTeam(id: ID!): Team
+  listTeams(filter: ModelTeamFilterInput, limit: Int, nextToken: String): ModelTeamConnection
+  tasksByTeamIdAndTitle(teamId: ID!, title: ModelStringKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelTaskFilterInput, limit: Int, nextToken: String): ModelTaskConnection
+}
+
+input ModelTaskConditionInput {
+  title: ModelStringInput
+  body: ModelStringInput
+  dateCreated: ModelStringInput
+  status: ModelTaskStatusEnumInput
+  teamId: ModelIDInput
+  and: [ModelTaskConditionInput]
+  or: [ModelTaskConditionInput]
+  not: ModelTaskConditionInput
+}
+
+input CreateTaskInput {
+  id: ID
+  title: String!
+  body: String
+  dateCreated: AWSDateTime
+  status: TaskStatusEnum
+  teamId: ID!
+}
+
+input UpdateTaskInput {
+  id: ID!
+  title: String
+  body: String
+  dateCreated: AWSDateTime
+  status: TaskStatusEnum
+  teamId: ID
+}
+
+input DeleteTaskInput {
+  id: ID!
+}
+
+type Mutation {
+  createTask(input: CreateTaskInput!, condition: ModelTaskConditionInput): Task
+  updateTask(input: UpdateTaskInput!, condition: ModelTaskConditionInput): Task
+  deleteTask(input: DeleteTaskInput!, condition: ModelTaskConditionInput): Task
+  createTeam(input: CreateTeamInput!, condition: ModelTeamConditionInput): Team
+  updateTeam(input: UpdateTeamInput!, condition: ModelTeamConditionInput): Team
+  deleteTeam(input: DeleteTeamInput!, condition: ModelTeamConditionInput): Team
+}
+
+input ModelSubscriptionTaskFilterInput {
+  id: ModelSubscriptionIDInput
+  title: ModelSubscriptionStringInput
+  body: ModelSubscriptionStringInput
+  dateCreated: ModelSubscriptionStringInput
+  status: ModelSubscriptionStringInput
+  teamId: ModelSubscriptionIDInput
+  and: [ModelSubscriptionTaskFilterInput]
+  or: [ModelSubscriptionTaskFilterInput]
+}
+
+type Subscription {
+  onCreateTask(filter: ModelSubscriptionTaskFilterInput): Task @aws_subscribe(mutations: ["createTask"])
+  onUpdateTask(filter: ModelSubscriptionTaskFilterInput): Task @aws_subscribe(mutations: ["updateTask"])
+  onDeleteTask(filter: ModelSubscriptionTaskFilterInput): Task @aws_subscribe(mutations: ["deleteTask"])
+  onCreateTeam(filter: ModelSubscriptionTeamFilterInput): Team @aws_subscribe(mutations: ["createTeam"])
+  onUpdateTeam(filter: ModelSubscriptionTeamFilterInput): Team @aws_subscribe(mutations: ["updateTeam"])
+  onDeleteTeam(filter: ModelSubscriptionTeamFilterInput): Team @aws_subscribe(mutations: ["deleteTeam"])
+}
+
+type ModelTeamConnection {
+  items: [Team]!
+  nextToken: String
+}
+
+input ModelTeamFilterInput {
+  id: ModelIDInput
+  teamName: ModelStringInput
+  and: [ModelTeamFilterInput]
+  or: [ModelTeamFilterInput]
+  not: ModelTeamFilterInput
+}
+
+input ModelTeamConditionInput {
+  teamName: ModelStringInput
+  and: [ModelTeamConditionInput]
+  or: [ModelTeamConditionInput]
+  not: ModelTeamConditionInput
+}
+
+input CreateTeamInput {
+  id: ID
+  teamName: String!
+}
+
+input UpdateTeamInput {
+  id: ID!
+  teamName: String
+}
+
+input DeleteTeamInput {
+  id: ID!
+}
+
+input ModelSubscriptionTeamFilterInput {
+  id: ModelSubscriptionIDInput
+  teamName: ModelSubscriptionStringInput
+  and: [ModelSubscriptionTeamFilterInput]
+  or: [ModelSubscriptionTeamFilterInput]
+}
+
+input ModelStringKeyConditionInput {
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  between: [String]
+  beginsWith: String
+}

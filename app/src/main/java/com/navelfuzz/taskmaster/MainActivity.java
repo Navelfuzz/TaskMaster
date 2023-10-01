@@ -1,6 +1,7 @@
 package com.navelfuzz.taskmaster;
 
 import static com.navelfuzz.taskmaster.activities.SettingsActivity.USERNAME_TAG;
+import static com.navelfuzz.taskmaster.activities.SettingsActivity.TEAM_NAME_TAG;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,13 +20,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.generated.model.Team;
 import com.navelfuzz.taskmaster.activities.AddTaskActivity;
 import com.navelfuzz.taskmaster.activities.AllTasksActivity;
 import com.navelfuzz.taskmaster.activities.SettingsActivity;
 import com.navelfuzz.taskmaster.adapters.ViewAdapter;
 import com.amplifyframework.datastore.generated.model.Task;
+import com.amplifyframework.datastore.generated.model.Team;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,13 +44,6 @@ public class MainActivity extends AppCompatActivity {
     ViewAdapter adapter;
     SharedPreferences preferences;
 
-//    Button addTaskButton;
-//    Button allTasksButton;
-//    ImageView settingsButton;
-//    EditText taskInputEditText;
-//    RecyclerView taskListRecyclerView;
-//    TextView usernameTextView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
+        //Only run once then comment out:
+        //createTeamInstances();
         setupSettingsButton();
         setupAddTaskButton();
         setupAllTasksButton();
-        updateTasksListFromDatabase();
-        setupRecyclerView();
     }
 
     @Override
@@ -66,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         setupUsernameTextView();
         updateTasksListFromDatabase();
+        setupRecyclerView();
+
     }
 
     void setupAddTaskButton(){
@@ -92,9 +91,11 @@ public class MainActivity extends AppCompatActivity {
     void setupUsernameTextView(){
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String userName = preferences.getString(USERNAME_TAG, "No Username");
-
+        String teamName = preferences.getString(TEAM_NAME_TAG, "All Teams");
         TextView usernameTextView = findViewById(R.id.MainActivityTextView);
         usernameTextView.setText(userName + "'s Tasks");
+        TextView teamTextView = findViewById(R.id.MainActivityTeamNameLabel);
+        teamTextView.setText(teamName + " View");
     }
 
     void setupRecyclerView(){
@@ -125,9 +126,18 @@ public class MainActivity extends AppCompatActivity {
                 ModelQuery.list(Task.class),
                 success -> {
                     Log.i(TAG, "Read tasks successfully.");
+                    String teamName = preferences.getString(TEAM_NAME_TAG, null);
                     tasks.clear();
-                    for(Task databaseTask : success.getData()){
-                        tasks.add(databaseTask);
+                    if (teamName == null) {
+                        for(Task databaseTask : success.getData()){
+                            tasks.add(databaseTask);
+                        }
+                    } else {
+                        for (Task databaseTask : success.getData()){
+                            if(databaseTask.getTeam().getTeamName().equals(teamName)){
+                                tasks.add(databaseTask);
+                            }
+                        }
                     }
                     runOnUiThread(() -> {
                         adapter.notifyDataSetChanged();
@@ -136,4 +146,37 @@ public class MainActivity extends AppCompatActivity {
                 failure -> Log.i(TAG, "Did not read tasks successfully.")
         );
     }
+
+    void createTeamInstances() {
+        Team team1 = Team.builder()
+                .teamName("Alpha Team")
+                .build();
+
+        Amplify.API.mutate(
+                ModelMutation.create(team1),
+                successResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): made a contact successfully"),
+                failureResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): contact failed with this response" + failureResponse)
+        );
+
+        Team team2 = Team.builder()
+                .teamName("Bravo Team")
+                .build();
+
+        Amplify.API.mutate(
+                ModelMutation.create(team2),
+                successResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): made a contact successfully"),
+                failureResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): contact failed with this response" + failureResponse)
+        );
+
+        Team team3 = Team.builder()
+                .teamName("Delta Team")
+                .build();
+
+        Amplify.API.mutate(
+                ModelMutation.create(team3),
+                successResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): made a contact successfully"),
+                failureResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): contact failed with this response" + failureResponse)
+        );
+    }
+
 }

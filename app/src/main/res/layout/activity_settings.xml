@@ -22,6 +22,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <RadioButton
+            android:id="@+id/radio_user_alpha"
+            style="@style/CustomRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/alpha_team" />
+
+        <RadioButton
+            android:id="@+id/radio_user_bravo"
+            style="@style/CustomRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/bravo_team" />
+
+        <RadioButton
+            android:id="@+id/radio_user_delta"
+            style="@style/CustomRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/delta_team" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/SettingsActivitySaveButton"
         android:layout_width="wrap_content"
@@ -30,5 +68,16 @@
         android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/team_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SettingsActivityUsernameInputEditText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@
 * [Lab 29: Room](#class-29-room)
 * [Lab 31: Espresso Tests](#class-31-testing-views-with-espresso)
 * [Lab 32: Amplify AWS](#class-32--amplify-aws)
+* [Lab 33: Another Day, Another Model](#class-33-another-day-another-model)
 
 ___
 
@@ -17,6 +18,7 @@ ___
 * [Lab 29: Room](/readme-catalog/lab29.md)
 * [Lab 31: Espresso Tests](/readme-catalog/lab31.md)
 * [Lab 32: Amplify AWS](/readme-catalog/lab32.md)
+* [Lab 33: Another Day, Another Model](/readme-catalog/lab33.md)
 ___
 
 ## Description
@@ -41,6 +43,16 @@ Or
 Use the `.gradlew/*` CLI command
 
 ## Change Log
+
+### Class 33: Another Day, Another Model
+
+1. Tasks Are Owned By Teams
+   * Create a second entity for a team, which has a name and a list of tasks. Update your tasks to be owned by a team. 
+   * Manually create three teams by running a mutation exactly three times in your code. (You do NOT need to allow the user to create new teams.)
+2. Add Task Form
+   * Modify your Add Task form to include either a Spinner or Radio Buttons for which team that task belongs to.
+3. Settings Page
+   * In addition to a username, allow the user to choose their team on the Settings page. Use that Team to display only that team’s tasks on the homepage.
 
 ### Class 32: Amplify AWS
 
@@ -159,42 +171,7 @@ Use the `.gradlew/*` CLI command
 
 [//]: # (## Links/Notes/Info)
 
-## Screenshots for Lab: Class 32
+## Screenshots for Lab: Class 33
 
-<img src="screenshots/lab32/homepage32.png" alt="homepage view lab32" width="150"/> 
-<img src="screenshots/lab32/amplifyTable.png" alt="amplify aws table inputs" width="600"/>
-
-
-### Idiot's guide (Meaning me.. So I don't forget a few things) to Navigation: Important Locations
-
-*/taskmaster*
-
-*/app*
-.gitignore: matches class example
-build.gradle: matches class example
-
-*/app/src/main*
-* /java
-* /res
-    * drawable: images
-    * layout:
-      * activity_main.xml
-    * values: this is where colors, strings, & themes are defined and called in activities
-      * colors.xml
-      * strings.xml
-      * themes.xml
-  
-AndroidManifest.xml: where activities are added. 
-* `<intent-filter>` is what defines the main activity.
-
-*/screenshots*
-* within this directory are subdirectories for each lab's screenshots
-
-*/wireframes*
-* within this directory are subdirectories for each lab's wireframe examples
-
-Root directory: taskmaster 
-Root build.gradle: currently 8.1.1
-Root gradlew: Android apps require emulator, CLI gradlew does not function
-Root .gitignore: matches class example
-
+<img src="../screenshots/lab32/XXX.png" alt="XXX" width="200"/> 
+<img src="../screenshots/lab32/XXX.png" alt="XXX" width="200"/> 

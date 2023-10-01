@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".activities.AddTaskActivity">
 
     <TextView
         android:id="@+id/AddTaskActivity"
@@ -20,14 +21,14 @@
         android:id="@+id/TaskInputLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="40dp"
         android:text="@string/task_input_label"
         app:layout_constraintStart_toStartOf="@+id/AddTaskActivity"
         app:layout_constraintTop_toBottomOf="@+id/AddTaskActivity" />
 
     <EditText
         android:id="@+id/AddTaskInputField"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="10"
@@ -48,7 +49,7 @@
 
     <EditText
         android:id="@+id/AddTaskDescriptionInputField"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="10"
@@ -57,15 +58,63 @@
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="@+id/TaskDescriptionInputLabel"
         app:layout_constraintTop_toBottomOf="@+id/TaskDescriptionInputLabel" />
+<!--adding changes from LAB33-->
+    <TextView
+        android:id="@+id/AddTaskActivityTeamNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/team_name"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintStart_toStartOf="@+id/TaskDescriptionInputLabel" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddTaskInputField">
+
+
+        <RadioButton
+            android:id="@+id/radio_alpha"
+            style="@style/CustomRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/alpha_team" />
+
+        <RadioButton
+            android:id="@+id/radio_bravo"
+            style="@style/CustomRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/bravo_team" />
+
+        <RadioButton
+            android:id="@+id/radio_delta"
+            style="@style/CustomRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/delta_team" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/AddTaskInputButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:text="@string/add_task"
-        app:layout_constraintStart_toStartOf="@+id/AddTaskDescriptionInputField"
-        app:layout_constraintTop_toBottomOf="@+id/AddTaskDescriptionInputField" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/AddTaskTotalCount"
@@ -73,7 +122,8 @@
         android:layout_height="wrap_content"
         android:text="@string/add_task_total_tasks"
         android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="@+id/AddTaskInputButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AddTaskInputButton" />
 
     <TextView
@@ -83,6 +133,6 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toEndOf="@+id/AddTaskInputButton"
-        app:layout_constraintTop_toBottomOf="@+id/AddTaskDescriptionInputField" />
+        app:layout_constraintTop_toBottomOf="@+id/TaskDescriptionInputLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
