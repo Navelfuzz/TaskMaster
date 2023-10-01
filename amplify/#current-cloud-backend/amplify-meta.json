@@ -1,0 +1,44 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-temptaskmaster-dev-65146-authRole",
+      "UnauthRoleArn": "arn:aws:iam::225423191942:role/amplify-temptaskmaster-dev-65146-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::225423191942:role/amplify-temptaskmaster-dev-65146-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-temptaskmaster-dev-65146-deployment",
+      "UnauthRoleName": "amplify-temptaskmaster-dev-65146-unauthRole",
+      "StackName": "amplify-temptaskmaster-dev-65146",
+      "StackId": "arn:aws:cloudformation:us-east-1:225423191942:stack/amplify-temptaskmaster-dev-65146/85121290-6048-11ee-87c0-0a9141dbf191",
+      "AmplifyAppId": "d1uxxmmpyvcowe"
+    }
+  },
+  "api": {
+    "temptaskmaster": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2024-09-30T10:58:37.305Z",
+              "description": ""
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "vyyvflpxjveevkikv2cmg56txa",
+        "GraphQLAPIEndpointOutput": "https://rj2eazbfgbfzhigl3iwi534bie.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-3ukxmi7kxndtzol5sy6m6vfcne"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apitemptaskmaster"
+      },
+      "lastPushTimeStamp": "2023-10-01T11:04:49.029Z",
+      "lastPushDirHash": "0m8u1OQuccHyp16u9xu9Sn1CU9o="
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="radio_alpha" type="id" />
+    <item name="radio_bravo" type="id" />
+    <item name="radio_delta" type="id" />
+</resources>

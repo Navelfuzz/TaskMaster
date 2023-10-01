@@ -20,4 +20,11 @@
     <string name="add_username">Username</string>
     <string name="save">Save</string>
     <string name="blank_task_name" />
+    <string name="alpha_team">Alpha Team</string>
+    <string name="bravo_team">Bravo Team</string>
+    <string name="delta_team">Delta Team</string>
+    <string name="team_name">Team Name</string>
+    <string name="team_label">What Team are you on?</string>
+    <string name="team_placeholder">Team Name</string>
+
 </resources>
