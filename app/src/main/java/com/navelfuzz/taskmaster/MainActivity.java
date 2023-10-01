@@ -31,6 +31,10 @@ import com.navelfuzz.taskmaster.adapters.ViewAdapter;
 import com.amplifyframework.datastore.generated.model.Task;
 import com.amplifyframework.datastore.generated.model.Team;
 
+import com.amplifyframework.auth.AuthUserAttributeKey;
+import com.amplifyframework.auth.options.AuthSignOutOptions;
+import com.amplifyframework.auth.options.AuthSignUpOptions;
+
 import java.util.ArrayList;
 import java.util.List;
 
