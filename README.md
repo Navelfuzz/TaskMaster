@@ -46,6 +46,12 @@ Use the `.gradlew/*` CLI command
 ## Change Log
 Screenshots for current lab always at bottom of this page
 
+### Class 36: Cognito
+1. Added User Signup Page
+2. Added User Login Page
+3. Added User Logout Functionality
+
+
 ### Class 34: Polish and Publish TaskMaster
 1. Created `app-release.aab` file withing `app/build/outputs/bundle/release` directory
 2. Created Google Play Store account
