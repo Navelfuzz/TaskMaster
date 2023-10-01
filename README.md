@@ -43,6 +43,7 @@ Or
 Use the `.gradlew/*` CLI command
 
 ## Change Log
+Screenshots for current lab always at bottom of this page
 
 ### Class 33: Another Day, Another Model
 
@@ -173,5 +174,8 @@ Use the `.gradlew/*` CLI command
 
 ## Screenshots for Lab: Class 33
 
-<img src="../screenshots/lab32/XXX.png" alt="XXX" width="200"/> 
-<img src="../screenshots/lab32/XXX.png" alt="XXX" width="200"/> 
+<img src="screenshots/lab33/alphaGroupSS.png" alt="Alpha Team Tasks" width="200"/> 
+<img src="screenshots/lab33/bravoGroupSS.png" alt="Bravo Team Tasks" width="200"/> 
+<img src="screenshots/lab33/deltaGroupSS.png" alt="Delta Team Tasks" width="200"/> 
+<img src="screenshots/lab33/awsTaskTableSS.png" alt="AWS Tasks" width="800"/> 
+<img src="screenshots/lab33/awsTeamTableSS.png" alt="AWS Teams" width="800"/> 

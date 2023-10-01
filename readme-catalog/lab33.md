@@ -32,8 +32,12 @@ Add to your Espresso tests some functionality about the new Team entity.
 
 ### Screenshots
 
-<img src="../screenshots/lab32/XXX.png" alt="XXX" width="200"/> 
-<img src="../screenshots/lab32/XXX.png" alt="XXX" width="200"/> 
+<img src="../screenshots/lab33/alphaGroupSS.png" alt="Alpha Team Tasks" width="200"/> 
+<img src="../screenshots/lab33/bravoGroupSS.png" alt="Bravo Team Tasks" width="200"/> 
+<img src="../screenshots/lab33/deltaGroupSS.png" alt="Delta Team Tasks" width="200"/> 
+<img src="../screenshots/lab33/awsTaskTableSS.png" alt="AWS Tasks" width="800"/> 
+<img src="../screenshots/lab33/awsTeamTableSS.png" alt="AWS Teams" width="800"/> 
+
 
 #### Instructions
 Updating Schema and using Amplify CLI
@@ -41,7 +45,6 @@ Updating Schema and using Amplify CLI
 2. Run `amplify codegen models` to update models
 3. Run `amplify update api` to ensure conflict detection is off
 4. Run `amplify push` to update backend
-5. 
 
 
 #### Submission Instructions
