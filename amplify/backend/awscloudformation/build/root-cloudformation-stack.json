@@ -152,16 +152,16 @@
         }
       }
     },
-    "apitaskmaster": {
+    "apitemptaskmaster": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-taskmaster-dev-73733-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
-          "AppSyncApiName": "taskmaster",
+          "AppSyncApiName": "temptaskmaster",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
-          "S3DeploymentBucket": "amplify-taskmaster-dev-73733-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/5e5023b808c90f3ff8e44e905a70cadf1fb696a8",
+          "S3DeploymentBucket": "amplify-temptaskmaster-dev-65146-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/5abade5e0b461ca244d7d4e249b906a30dec2a7a",
           "env": "dev"
         }
       }

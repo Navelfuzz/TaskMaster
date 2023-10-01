@@ -6,11 +6,11 @@
     },
     "AppSync": {
         "Default": {
-            "ApiUrl": "https://lmkr6ubx4jfctonkdrkyk2qola.appsync-api.us-east-1.amazonaws.com/graphql",
+            "ApiUrl": "https://rj2eazbfgbfzhigl3iwi534bie.appsync-api.us-east-1.amazonaws.com/graphql",
             "Region": "us-east-1",
             "AuthMode": "API_KEY",
-            "ApiKey": "da2-bymvu5evb5e4zm42vn47uypvv4",
-            "ClientDatabasePrefix": "taskmaster_API_KEY"
+            "ApiKey": "da2-3ukxmi7kxndtzol5sy6m6vfcne",
+            "ClientDatabasePrefix": "temptaskmaster_API_KEY"
         }
     }
 }

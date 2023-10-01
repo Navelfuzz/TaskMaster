@@ -1,15 +1,15 @@
 {
   "api": {
-    "taskmaster": {
+    "temptaskmaster": {
       "dependsOn": [],
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDate": "2024-09-23T13:25:32.181Z",
+              "apiKeyExpirationDate": "2024-09-30T10:58:37.305Z",
               "apiKeyExpirationDays": 365,
-              "description": "new long lasting API key"
+              "description": ""
             },
             "authenticationType": "API_KEY"
           }

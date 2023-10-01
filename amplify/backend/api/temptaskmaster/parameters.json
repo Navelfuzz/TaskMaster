@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "temptaskmaster",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}

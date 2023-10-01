@@ -51,19 +51,20 @@ public class MainActivity extends AppCompatActivity {
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        //Only run once then comment out:
         //createTeamInstances();
         setupSettingsButton();
         setupAddTaskButton();
         setupAllTasksButton();
+        updateTasksListFromDatabase();
+        setupRecyclerView();
     }
 
     @Override
     protected void onResume(){
         super.onResume();
         setupUsernameTextView();
+
         updateTasksListFromDatabase();
-        setupRecyclerView();
 
     }
 
