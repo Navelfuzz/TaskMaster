@@ -37,8 +37,8 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apitemptaskmaster"
       },
-      "lastPushTimeStamp": "2023-10-02T09:32:53.243Z",
-      "lastPushDirHash": "0m8u1OQuccHyp16u9xu9Sn1CU9o="
+      "lastPushTimeStamp": "2023-10-02T16:04:59.707Z",
+      "lastPushDirHash": "aJHlFx08jDtIuEpZ2IG+ap2HQa8="
     }
   },
   "auth": {
@@ -71,7 +71,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/auth/temptaskmaster0b84a7f5-cloudformation-template.json",
         "logicalId": "authtemptaskmaster0b84a7f5"
       },
-      "lastPushTimeStamp": "2023-10-02T09:32:53.927Z",
+      "lastPushTimeStamp": "2023-10-02T16:04:57.860Z",
       "output": {
         "UserPoolId": "us-east-1_7RUmz4F6C",
         "AppClientIDWeb": "13mb988uf3qld36o4a44ca234e",
@@ -89,7 +89,7 @@
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "lastPushTimeStamp": "2023-10-02T09:32:53.927Z",
+      "lastPushTimeStamp": "2023-10-02T16:04:57.862Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storagetaskmasterStorage"

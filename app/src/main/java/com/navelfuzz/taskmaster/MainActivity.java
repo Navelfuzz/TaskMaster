@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String TASK_NAME_TAG = "taskName";
     public static final String TASK_DESC_TAG = "taskDesc";
     public static final String TASK_STATUS_TAG = "taskStatus";
+    public static final String TASK_ID_EXTRA_TAG = "taskId";
 
     List<Task> tasks = new ArrayList<>();
     ViewAdapter adapter;
@@ -59,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         setupUsernameTextView();
 
@@ -82,28 +81,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void setupAddTaskButton(){
+    void setupAddTaskButton() {
         Button addTaskButton = findViewById(R.id.MainActivityAddTaskButton);
         addTaskButton.setOnClickListener(view -> {
             Intent goToAddTasksIntent = new Intent(MainActivity.this, AddTaskActivity.class);
             startActivity(goToAddTasksIntent);
         });
     }
-    void setupAllTasksButton(){
+
+    void setupAllTasksButton() {
         Button allTasksButton = findViewById(R.id.MainActivityAllTasksButton);
         allTasksButton.setOnClickListener(view -> {
             Intent goToAllTasksIntent = new Intent(MainActivity.this, AllTasksActivity.class);
             startActivity(goToAllTasksIntent);
         });
     }
-    void setupSettingsButton(){
-        ((ImageView)findViewById(R.id.MainActivitySettingsButton)).setOnClickListener(view -> {
+
+    void setupSettingsButton() {
+        ((ImageView) findViewById(R.id.MainActivitySettingsButton)).setOnClickListener(view -> {
             Intent gotToSettingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(gotToSettingsIntent);
         });
     }
 
-    void setupUsernameTextView(){
+    void setupUsernameTextView() {
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String userName = preferences.getString(USERNAME_TAG, "No Username");
         String teamName = preferences.getString(TEAM_NAME_TAG, "All Teams");
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         teamTextView.setText(teamName + " View");
     }
 
-    void setupRecyclerView(){
+    void setupRecyclerView() {
         RecyclerView taskListRecyclerView = (RecyclerView) findViewById(R.id.MainActivityTaskRecyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         taskListRecyclerView.setLayoutManager(layoutManager);
@@ -125,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 super.getItemOffsets(outRect, view, parent, state);
                 outRect.bottom = spaceInPixels;
 
-                if(parent.getChildAdapterPosition(view) == tasks.size()-1) {
+                if (parent.getChildAdapterPosition(view) == tasks.size() - 1) {
                     outRect.bottom = 0;
                 }
             }
@@ -136,63 +137,63 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    void updateTasksListFromDatabase(){
+    void updateTasksListFromDatabase() {
         Amplify.API.query(
-                ModelQuery.list(Task.class),
-                success -> {
-                    Log.i(TAG, "Read tasks successfully.");
-                    String teamName = preferences.getString(TEAM_NAME_TAG, null);
-                    tasks.clear();
-                    if (teamName == null) {
-                        for(Task databaseTask : success.getData()){
+            ModelQuery.list(Task.class),
+            success -> {
+                Log.i(TAG, "Read tasks successfully.");
+                String teamName = preferences.getString(TEAM_NAME_TAG, null);
+                tasks.clear();
+                if (teamName == null) {
+                    for (Task databaseTask : success.getData()) {
+                        tasks.add(databaseTask);
+                    }
+                } else {
+                    for (Task databaseTask : success.getData()) {
+                        if (databaseTask.getTeam().getTeamName().equals(teamName)) {
                             tasks.add(databaseTask);
                         }
-                    } else {
-                        for (Task databaseTask : success.getData()){
-                            if(databaseTask.getTeam().getTeamName().equals(teamName)){
-                                tasks.add(databaseTask);
-                            }
-                        }
                     }
-                    runOnUiThread(() -> {
-                        adapter.notifyDataSetChanged();
-                    });
-                },
-                failure -> Log.i(TAG, "Did not read tasks successfully.")
+                }
+                runOnUiThread(() -> {
+                    adapter.notifyDataSetChanged();
+                });
+            },
+            failure -> Log.i(TAG, "Did not read tasks successfully.")
         );
     }
-
-    void createTeamInstances() {
-        Team team1 = Team.builder()
-                .teamName("Alpha Team")
-                .build();
-
-        Amplify.API.mutate(
-                ModelMutation.create(team1),
-                successResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): made a contact successfully"),
-                failureResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): contact failed with this response" + failureResponse)
-        );
-
-        Team team2 = Team.builder()
-                .teamName("Bravo Team")
-                .build();
-
-        Amplify.API.mutate(
-                ModelMutation.create(team2),
-                successResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): made a contact successfully"),
-                failureResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): contact failed with this response" + failureResponse)
-        );
-
-        Team team3 = Team.builder()
-                .teamName("Delta Team")
-                .build();
-
-        Amplify.API.mutate(
-                ModelMutation.create(team3),
-                successResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): made a contact successfully"),
-                failureResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): contact failed with this response" + failureResponse)
-        );
-    }
+}
+//    void createTeamInstances() {
+//        Team team1 = Team.builder()
+//                .teamName("Alpha Team")
+//                .build();
+//
+//        Amplify.API.mutate(
+//                ModelMutation.create(team1),
+//                successResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): made a contact successfully"),
+//                failureResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): contact failed with this response" + failureResponse)
+//        );
+//
+//        Team team2 = Team.builder()
+//                .teamName("Bravo Team")
+//                .build();
+//
+//        Amplify.API.mutate(
+//                ModelMutation.create(team2),
+//                successResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): made a contact successfully"),
+//                failureResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): contact failed with this response" + failureResponse)
+//        );
+//
+//        Team team3 = Team.builder()
+//                .teamName("Delta Team")
+//                .build();
+//
+//        Amplify.API.mutate(
+//                ModelMutation.create(team3),
+//                successResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): made a contact successfully"),
+//                failureResponse -> Log.i(TAG, "MainActivity.createTeamInstances(): contact failed with this response" + failureResponse)
+//        );
+//    }
 
     //This is where the Manual S3 Code begins
 //    void manualS3FileUpload(){
@@ -224,4 +225,3 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        );
 //    }
-}
