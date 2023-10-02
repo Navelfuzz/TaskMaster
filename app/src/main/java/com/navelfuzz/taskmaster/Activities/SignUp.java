@@ -12,6 +12,7 @@ import com.navelfuzz.taskmaster.R;
 import com.amplifyframework.auth.AuthUserAttributeKey;
 import com.amplifyframework.auth.options.AuthSignUpOptions;
 import com.amplifyframework.core.Amplify;
+import com.navelfuzz.taskmaster.activities.Verification;
 
 public class SignUp extends AppCompatActivity {
     public static final String TAG = "SignUpActivity";

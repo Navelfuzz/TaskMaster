@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.core.Amplify;
@@ -32,7 +33,6 @@ import com.amplifyframework.datastore.generated.model.Task;
 import com.amplifyframework.datastore.generated.model.Team;
 
 import com.amplifyframework.auth.AuthUserAttributeKey;
-import com.amplifyframework.auth.options.AuthSignOutOptions;
 import com.amplifyframework.auth.options.AuthSignUpOptions;
 
 import java.util.ArrayList;
@@ -52,6 +52,52 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Cognito Sign Up Logic
+//        Amplify.Auth.signUp("jcstillson13@gmail.com", "Password*",
+//                AuthSignUpOptions.builder()
+//                .userAttribute(AuthUserAttributeKey.email(), "jcstillson13@gmail.com")
+//                .userAttribute(AuthUserAttributeKey.nickname(), "Jon")
+//                .build(),
+//                successResponse -> Log.i(TAG, "Sign up succeeded: " + successResponse.toString()),
+//                failureResponse -> Log.i(TAG, "Sign up failed with username: " + "jcstillson13@gmail.com" + "with this message: " + failureResponse.toString())
+//        );
+
+        //Cognito Verification Logic
+//        Amplify.Auth.confirmSignUp("jcstillson13@gmail.com",
+//                "364496",
+//            success -> {
+//                Log.i(TAG, "Verification succeeded: " + success.toString());
+//            },
+//            failure -> {
+//                Log.i(TAG, "Verification failed: " + failure.toString());
+//            }
+//        );
+
+
+        //Cognito Sign In Logic
+//        Amplify.Auth.signIn("jcstillson13@gmail.com", "Password*",
+//                success -> Log.i(TAG, "Login Succeeded: " + success.toString()),
+//                failure -> Log.i(TAG, "Login Failed: " + failure.toString())
+//        );
+
+
+        //// Set the user's username based on their nickname saved in the Cognito user pool
+        //Amplify.Auth.fetchUserAttributes(
+        //  success -> {
+        //    for(AuthUserAttribute userAttribute : success) {
+        //      if(userAttribute.getKey().getKeyString().equals("nickname")) {
+        //        String userNickname = userAttribute.getValue();
+        //        runOnUiThread(() -> {
+        //          // update a textView with the nickname
+        //        });
+        //      }
+        //    }
+        //  },
+        //  failure -> {
+        //
+        //  }
+        //);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
 

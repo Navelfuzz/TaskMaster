@@ -16,11 +16,13 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.amplifyframework.auth.AuthUser;
+import com.amplifyframework.auth.cognito.result.AWSCognitoAuthSignOutResult;
 import com.amplifyframework.auth.options.AuthSignOutOptions;
-import com.amplifyframework.auth.result.AWSCognitoAuthSignOutResult;
 import com.amplifyframework.core.Amplify;
 import com.navelfuzz.taskmaster.MainActivity;
 import com.navelfuzz.taskmaster.R;
+
+import aws.sdk.kotlin.services.cognitoidentityprovider.model.EventType;
 
 public class SettingsActivity extends AppCompatActivity {
     public static final String USERNAME_TAG = "userName";
