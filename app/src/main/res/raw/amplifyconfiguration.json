@@ -68,7 +68,22 @@
                             "EMAIL"
                         ]
                     }
+                },
+                "S3TransferUtility": {
+                    "Default": {
+                        "Bucket": "temptaskmasterfdd431ec02944c0f96198a6930726e1c65146-dev",
+                        "Region": "us-east-1"
+                    }
                 }
+            }
+        }
+    },
+    "storage": {
+        "plugins": {
+            "awsS3StoragePlugin": {
+                "bucket": "temptaskmasterfdd431ec02944c0f96198a6930726e1c65146-dev",
+                "region": "us-east-1",
+                "defaultAccessLevel": "guest"
             }
         }
     }

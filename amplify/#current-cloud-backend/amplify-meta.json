@@ -37,7 +37,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apitemptaskmaster"
       },
-      "lastPushTimeStamp": "2023-10-02T00:22:27.784Z",
+      "lastPushTimeStamp": "2023-10-02T09:32:53.243Z",
       "lastPushDirHash": "0m8u1OQuccHyp16u9xu9Sn1CU9o="
     }
   },
@@ -71,7 +71,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/auth/temptaskmaster0b84a7f5-cloudformation-template.json",
         "logicalId": "authtemptaskmaster0b84a7f5"
       },
-      "lastPushTimeStamp": "2023-10-02T00:22:28.327Z",
+      "lastPushTimeStamp": "2023-10-02T09:32:53.927Z",
       "output": {
         "UserPoolId": "us-east-1_7RUmz4F6C",
         "AppClientIDWeb": "13mb988uf3qld36o4a44ca234e",
@@ -81,7 +81,24 @@
         "IdentityPoolName": "temptaskmaster0b84a7f5_identitypool_0b84a7f5__dev",
         "UserPoolName": "temptaskmaster0b84a7f5_userpool_0b84a7f5"
       },
-      "lastPushDirHash": "UbDmjZdKRoPBpomTNaKN0DKl/IA="
+      "lastPushDirHash": "ohap2ztAvka8dniKbSVb2NEovmo="
+    }
+  },
+  "storage": {
+    "taskmasterStorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2023-10-02T09:32:53.927Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storagetaskmasterStorage"
+      },
+      "output": {
+        "BucketName": "temptaskmasterfdd431ec02944c0f96198a6930726e1c65146-dev",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "S0Smy27ngp6K+kzSkh9XQfnKCz8="
     }
   }
 }

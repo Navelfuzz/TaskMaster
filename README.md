@@ -8,6 +8,8 @@
 * [Lab 32: Amplify AWS](#class-32--amplify-aws)
 * [Lab 33: Another Day, Another Model](#class-33-another-day-another-model)
 * [Lab 34: Polish and Publish TaskMaster](#class-34-polish-and-publish-taskmaster)
+* [Lab 36: Cognito](#class-36-cognito)
+* [Lab 37: S3 Image Uploads](#class-37-s3-image-uploads)
 ___
 
 ### Directory of individual lab Readme files: [readme-catalog](/readme-catalog/)
@@ -20,6 +22,8 @@ ___
 * [Lab 32: Amplify AWS](/readme-catalog/lab32.md)
 * [Lab 33: Another Day, Another Model](/readme-catalog/lab33.md)
 * [Lab 34: Polish and Publish TaskMaster](/readme-catalog/lab34.md)
+* [Lab 36: Cognito](/readme-catalog/lab36.md)
+* [Lab 37: S3 Image Uploads](/readme-catalog/lab37.md)
 ___
 
 ## Description
@@ -28,6 +32,15 @@ This is an application which will evolve over time as a "To Do List" program tha
 data storage and hosting methods and adds components and functionality over time.
 
 ### Instructions
+
+***Lab 37: S3 Image Uploads***
+Keep in mind the following
+1. Amplify IAM User are usernames for Developers
+2. Cognito/Auth User Pools are usernames for end users
+3. DynamoDB is a NoSQL database that stores schema/model related data
+4. S3 is a file storage service for large amounts of data (images in our uses)
+
+
 
 In order to run the application, you must run it through an Android Emulator. 
 It was constructed using a Pixel 3a XL emulator with a minimum android API 24 and target of 33.
@@ -46,14 +59,17 @@ Use the `.gradlew/*` CLI command
 ## Change Log
 Screenshots for current lab always at bottom of this page
 
+### Class 37: S3 Image Uploads
+
+
+
+
+
 ### Class 36: Cognito
 Added Cognito for Auth to application.
     1. Created Login Page
     2. Created SignUp Page
     3. Created Verification Page
-
-    Updated APK
-
 
 ### Class 34: Polish and Publish TaskMaster
 1. Created `app-release.aab` file withing `app/build/outputs/bundle/release` directory
@@ -159,7 +175,7 @@ Added Cognito for Auth to application.
    * Show the selected task's title
    * Lorem Ipsum that description
 2. Settings Page
-   * Inpute field for Username
+   * Input field for Username
    * save button to save the Username
 3. Homepage
    * Add Username Label which starts as empty
@@ -189,13 +205,12 @@ Added Cognito for Auth to application.
 **All these requirements were implemented**
 
 [//]: # (## Links/Notes/Info)
+[//]: # (Generic img link for these readmes)
+[//]: # (<img src="screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
 
-## Screenshots for Lab: Class 36
-<img src="screenshots/lab36/blankHome.png" alt="App Start Up" width="200"/> 
-<img src="screenshots/lab36/signUp.png" alt="Sign Up Page" width="200"/> 
-<img src="screenshots/lab36/verificationPage.png" alt="Verification Page" width="200"/> 
-<img src="screenshots/lab36/loginPage.png" alt="Login Page" width="200"/> 
-<img src="screenshots/lab36/loggedIn.png" alt="Logged In User" width="200"/> 
-<img src="screenshots/lab36/loggedOut.png" alt="Logged Out User" width="200"/> 
 
+## Screenshots for Lab: Class 37
+[//]: # (<img src="screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
+[//]: # (<img src="screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
+[//]: # (<img src="screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
 

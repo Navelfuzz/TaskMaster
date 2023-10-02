@@ -38,6 +38,10 @@ import com.amplifyframework.datastore.generated.model.Team;
 import com.amplifyframework.auth.AuthUserAttributeKey;
 import com.amplifyframework.auth.options.AuthSignUpOptions;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         setupAllTasksButton();
         updateTasksListFromDatabase();
         setupRecyclerView();
+        //manualS3FileUpload();
     }
 
     @Override
@@ -189,4 +194,34 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
+    //This is where the Manual S3 Code begins
+//    void manualS3FileUpload(){
+//        // create a test file to be saved to S3
+//        String testFileName = "testFileName.txt";
+//        File testFile = new File(getApplicationContext().getFilesDir(), testFileName);
+//
+//        // write to test file with BufferedWriter
+//        try {
+//            BufferedWriter testFileBufferedWriter = new BufferedWriter(new FileWriter(testFile));
+//            testFileBufferedWriter.append("some test text here\nAnother line of test text");
+//            testFileBufferedWriter.close(); // Do this or your text may not be saved
+//        } catch (IOException ioe) {
+//            Log.e(TAG, "Could not write file locally with filename: " + testFileName);
+//        }
+//
+//        // Create an S3 Key
+//        String testFileS3Key = "someFileOnS3.txt";
+//
+//        // Call Storage.uploadFile
+//        Amplify.Storage.uploadFile(
+//            testFileS3Key,
+//            testFile,
+//            success -> {
+//                Log.i(TAG, "S3 uploaded successfully! Key is: " + success.getKey());
+//            },
+//            failure -> {
+//                Log.i(TAG, "S3 upload failed! " + failure.getMessage());
+//            }
+//        );
+//    }
 }
