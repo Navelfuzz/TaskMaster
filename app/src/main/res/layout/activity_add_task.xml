@@ -21,10 +21,11 @@
         android:id="@+id/TaskInputLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
         android:text="@string/task_input_label"
         app:layout_constraintStart_toStartOf="@+id/AddTaskActivity"
-        app:layout_constraintTop_toBottomOf="@+id/AddTaskActivity" />
+        app:layout_constraintTop_toBottomOf="@+id/AddTaskActivityImageView" />
 
     <EditText
         android:id="@+id/AddTaskInputField"
@@ -111,7 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/add_task"
+        android:text="@string/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
@@ -134,5 +135,17 @@
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toEndOf="@+id/AddTaskInputButton"
         app:layout_constraintTop_toBottomOf="@+id/TaskDescriptionInputLabel" />
+
+    <ImageView
+        android:id="@+id/AddTaskActivityImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/add_task_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddTaskActivity"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
