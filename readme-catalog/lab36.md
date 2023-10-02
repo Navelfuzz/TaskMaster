@@ -22,3 +22,10 @@ Update your daily change log with today’s changes.
 
 ### Screenshots
 
+<img src="../screenshots/lab36/blankHome.png" alt="App Start Up" width="200"/> 
+<img src="../screenshots/lab36/signUp.png" alt="Sign Up Page" width="200"/> 
+<img src="../screenshots/lab36/verificationPage.png" alt="Verification Page" width="200"/> 
+<img src="../screenshots/lab36/loginPage.png" alt="Login Page" width="200"/> 
+<img src="../screenshots/lab36/loggedIn.png" alt="Logged In User" width="200"/> 
+<img src="../screenshots/lab36/loggedOut.png" alt="Logged Out User" width="200"/> 
+
