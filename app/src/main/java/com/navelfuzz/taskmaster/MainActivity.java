@@ -20,8 +20,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.graphql.model.ModelQuery;
+import com.amplifyframework.auth.AuthUserAttribute;
+import com.amplifyframework.auth.cognito.result.AWSCognitoAuthSignOutResult;
+import com.amplifyframework.auth.options.AuthSignOutOptions;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Team;
 import com.navelfuzz.taskmaster.activities.AddTaskActivity;
@@ -30,6 +34,9 @@ import com.navelfuzz.taskmaster.activities.SettingsActivity;
 import com.navelfuzz.taskmaster.adapters.ViewAdapter;
 import com.amplifyframework.datastore.generated.model.Task;
 import com.amplifyframework.datastore.generated.model.Team;
+
+import com.amplifyframework.auth.AuthUserAttributeKey;
+import com.amplifyframework.auth.options.AuthSignUpOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
 

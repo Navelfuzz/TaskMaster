@@ -46,6 +46,15 @@ Use the `.gradlew/*` CLI command
 ## Change Log
 Screenshots for current lab always at bottom of this page
 
+### Class 36: Cognito
+Added Cognito for Auth to application.
+    1. Created Login Page
+    2. Created SignUp Page
+    3. Created Verification Page
+
+    Updated APK
+
+
 ### Class 34: Polish and Publish TaskMaster
 1. Created `app-release.aab` file withing `app/build/outputs/bundle/release` directory
 2. Created Google Play Store account
@@ -181,8 +190,12 @@ Screenshots for current lab always at bottom of this page
 
 [//]: # (## Links/Notes/Info)
 
-## Screenshots for Lab: Class 34
+## Screenshots for Lab: Class 36
+<img src="screenshots/lab36/blankHome.png" alt="App Start Up" width="200"/> 
+<img src="screenshots/lab36/signUp.png" alt="Sign Up Page" width="200"/> 
+<img src="screenshots/lab36/verificationPage.png" alt="Verification Page" width="200"/> 
+<img src="screenshots/lab36/loginPage.png" alt="Login Page" width="200"/> 
+<img src="screenshots/lab36/loggedIn.png" alt="Logged In User" width="200"/> 
+<img src="screenshots/lab36/loggedOut.png" alt="Logged Out User" width="200"/> 
 
-<img src="screenshots/lab34/releaseError.png" alt="Release Error" width="650"/> 
-<img src="screenshots/lab34/identityConfirmation.png" alt="Google Identity Confirmation" width="650"/> 
 

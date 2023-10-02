@@ -37,8 +37,51 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apitemptaskmaster"
       },
-      "lastPushTimeStamp": "2023-10-01T11:04:49.029Z",
+      "lastPushTimeStamp": "2023-10-02T00:22:27.784Z",
       "lastPushDirHash": "0m8u1OQuccHyp16u9xu9Sn1CU9o="
+    }
+  },
+  "auth": {
+    "temptaskmaster0b84a7f5": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/auth/temptaskmaster0b84a7f5-cloudformation-template.json",
+        "logicalId": "authtemptaskmaster0b84a7f5"
+      },
+      "lastPushTimeStamp": "2023-10-02T00:22:28.327Z",
+      "output": {
+        "UserPoolId": "us-east-1_7RUmz4F6C",
+        "AppClientIDWeb": "13mb988uf3qld36o4a44ca234e",
+        "AppClientID": "3411tti244d9semlg93p548vvk",
+        "IdentityPoolId": "us-east-1:d972c94e-6acd-4fa5-a27f-259c02022831",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:225423191942:userpool/us-east-1_7RUmz4F6C",
+        "IdentityPoolName": "temptaskmaster0b84a7f5_identitypool_0b84a7f5__dev",
+        "UserPoolName": "temptaskmaster0b84a7f5_userpool_0b84a7f5"
+      },
+      "lastPushDirHash": "UbDmjZdKRoPBpomTNaKN0DKl/IA="
     }
   }
 }

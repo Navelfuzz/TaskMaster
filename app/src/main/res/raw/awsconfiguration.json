@@ -12,5 +12,43 @@
             "ApiKey": "da2-3ukxmi7kxndtzol5sy6m6vfcne",
             "ClientDatabasePrefix": "temptaskmaster_API_KEY"
         }
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-east-1:d972c94e-6acd-4fa5-a27f-259c02022831",
+                "Region": "us-east-1"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "us-east-1_7RUmz4F6C",
+            "AppClientId": "3411tti244d9semlg93p548vvk",
+            "Region": "us-east-1"
+        }
+    },
+    "Auth": {
+        "Default": {
+            "authenticationFlowType": "USER_SRP_AUTH",
+            "socialProviders": [],
+            "usernameAttributes": [
+                "EMAIL"
+            ],
+            "signupAttributes": [
+                "EMAIL"
+            ],
+            "passwordProtectionSettings": {
+                "passwordPolicyMinLength": 8,
+                "passwordPolicyCharacters": []
+            },
+            "mfaConfiguration": "OFF",
+            "mfaTypes": [
+                "SMS"
+            ],
+            "verificationMechanisms": [
+                "EMAIL"
+            ]
+        }
     }
 }
