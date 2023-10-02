@@ -24,11 +24,9 @@ Update your daily change log with today’s changes.
 
 ### Screenshots
 
-[//]: # (<img src="../screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
-[//]: # (<img src="../screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
-[//]: # (<img src="../screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
-
-
+<img src="../screenshots/lab37/blankTask.png" alt="blank Add Task form" width="200"/>
+<img src="../screenshots/lab37/filledTaskForm.png" alt="filled Add Task form" width="200"/>
+<img src="../screenshots/lab37/taskDescrip.png" alt="Task Description page" width="200"/>
 
 #### Submission Instructions
 * Continue working in your taskmaster repo.

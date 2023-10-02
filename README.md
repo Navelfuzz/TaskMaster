@@ -31,19 +31,25 @@ ___
 This is an application which will evolve over time as a "To Do List" program that uses different 
 data storage and hosting methods and adds components and functionality over time.
 
-### Instructions
+## Instructions
+___
+### *API 26 is required once Amplify Functions are implemented*
+___
 
 ***Lab 37: S3 Image Uploads***
+
 Keep in mind the following
 1. Amplify IAM User are usernames for Developers
 2. Cognito/Auth User Pools are usernames for end users
 3. DynamoDB is a NoSQL database that stores schema/model related data
 4. S3 is a file storage service for large amounts of data (images in our uses)
 
+*When using an emulator be sure to put images in your emulator that can be uploaded for testing*
 
+    In order to run the application, you must run it through an Android Emulator. 
+    It was constructed using a Pixel 5 emulator with a minimum android API 26 and target of 33.
 
-In order to run the application, you must run it through an Android Emulator. 
-It was constructed using a Pixel 3a XL emulator with a minimum android API 24 and target of 33.
+    
 
 ***Lab 32 & up: Amplify AWS and Dates***
 In order to operate the application one must use an Android Emulator with a minimum of 26 for features to work properly.
@@ -60,9 +66,18 @@ Use the `.gradlew/*` CLI command
 Screenshots for current lab always at bottom of this page
 
 ### Class 37: S3 Image Uploads
+Implemented S3 Storage in order to upload images associated with user tasks.
 
+The buildout requires passes a key from the S3 bucket to the Task object in order to display the image on the Task Detail page.
 
-
+General Lab Steps:
+    1. Added S3 dependencies to `build.gradle`
+    2. Ran `amplify add storage` and `amplify push` to add S3 to Amplify
+    3. Added S3 code to `MainActivity.java` to upload images to S3
+        a. hardcoded the functionality step by step in order to understand the process
+    4. Added S3 code to app components and built out layout/flow
+    5. Updated schema.graphql to include S3 key
+        a. Then ran `amplify codegen models` to update models
 
 
 ### Class 36: Cognito
@@ -210,7 +225,7 @@ Added Cognito for Auth to application.
 
 
 ## Screenshots for Lab: Class 37
-[//]: # (<img src="screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
-[//]: # (<img src="screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
-[//]: # (<img src="screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
+<img src="screenshots/lab37/blankTask.png" alt="blank Add Task form" width="200"/>
+<img src="screenshots/lab37/filledTaskForm.png" alt="filled Add Task form" width="200"/>
+<img src="screenshots/lab37/taskDescrip.png" alt="Task Description page" width="200"/>
 
