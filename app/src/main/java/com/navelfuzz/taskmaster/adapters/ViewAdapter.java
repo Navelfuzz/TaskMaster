@@ -48,6 +48,9 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.TaskListViewHo
             goToTaskDetailIntent.putExtra(MainActivity.TASK_DESC_TAG, tasks.get(position).getBody());
             goToTaskDetailIntent.putExtra(MainActivity.TASK_STATUS_TAG, tasks.get(position).getStatus().toString());
             goToTaskDetailIntent.putExtra(MainActivity.TASK_ID_EXTRA_TAG, tasks.get(position).getId());
+            goToTaskDetailIntent.putExtra(MainActivity.TASK_LATITUDE_EXTRA_TAG, tasks.get(position).getLatitude());
+            goToTaskDetailIntent.putExtra(MainActivity.TASK_LONGITUDE_EXTRA_TAG, tasks.get(position).getLongitude());
+            goToTaskDetailIntent.putExtra(MainActivity.TASK_ADDRESS_EXTRA_TAG, tasks.get(position).getAddress());
             callingActivity.startActivity(goToTaskDetailIntent);
         });
     }

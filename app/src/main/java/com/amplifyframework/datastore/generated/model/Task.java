@@ -35,6 +35,9 @@ public final class Task implements Model {
   public static final QueryField STATUS = field("Task", "status");
   public static final QueryField TEAM = field("Task", "teamId");
   public static final QueryField TASK_IMAGE_S3_KEY = field("Task", "taskImageS3Key");
+  public static final QueryField LATITUDE = field("Task", "latitude");
+  public static final QueryField LONGITUDE = field("Task", "longitude");
+  public static final QueryField ADDRESS = field("Task", "address");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="String", isRequired = true) String title;
   private final @ModelField(targetType="String") String body;
@@ -42,6 +45,9 @@ public final class Task implements Model {
   private final @ModelField(targetType="TaskStatusEnum") TaskStatusEnum status;
   private final @ModelField(targetType="Team") @BelongsTo(targetName = "teamId", targetNames = {"teamId"}, type = Team.class) Team team;
   private final @ModelField(targetType="String") String taskImageS3Key;
+  private final @ModelField(targetType="String") String latitude;
+  private final @ModelField(targetType="String") String longitude;
+  private final @ModelField(targetType="String") String address;
   private @ModelField(targetType="AWSDateTime", isReadOnly = true) Temporal.DateTime createdAt;
   private @ModelField(targetType="AWSDateTime", isReadOnly = true) Temporal.DateTime updatedAt;
   /** @deprecated This API is internal to Amplify and should not be used. */
@@ -78,6 +84,18 @@ public final class Task implements Model {
       return taskImageS3Key;
   }
   
+  public String getLatitude() {
+      return latitude;
+  }
+  
+  public String getLongitude() {
+      return longitude;
+  }
+  
+  public String getAddress() {
+      return address;
+  }
+  
   public Temporal.DateTime getCreatedAt() {
       return createdAt;
   }
@@ -86,7 +104,7 @@ public final class Task implements Model {
       return updatedAt;
   }
   
-  private Task(String id, String title, String body, Temporal.DateTime dateCreated, TaskStatusEnum status, Team team, String taskImageS3Key) {
+  private Task(String id, String title, String body, Temporal.DateTime dateCreated, TaskStatusEnum status, Team team, String taskImageS3Key, String latitude, String longitude, String address) {
     this.id = id;
     this.title = title;
     this.body = body;
@@ -94,6 +112,9 @@ public final class Task implements Model {
     this.status = status;
     this.team = team;
     this.taskImageS3Key = taskImageS3Key;
+    this.latitude = latitude;
+    this.longitude = longitude;
+    this.address = address;
   }
   
   @Override
@@ -111,6 +132,9 @@ public final class Task implements Model {
               ObjectsCompat.equals(getStatus(), task.getStatus()) &&
               ObjectsCompat.equals(getTeam(), task.getTeam()) &&
               ObjectsCompat.equals(getTaskImageS3Key(), task.getTaskImageS3Key()) &&
+              ObjectsCompat.equals(getLatitude(), task.getLatitude()) &&
+              ObjectsCompat.equals(getLongitude(), task.getLongitude()) &&
+              ObjectsCompat.equals(getAddress(), task.getAddress()) &&
               ObjectsCompat.equals(getCreatedAt(), task.getCreatedAt()) &&
               ObjectsCompat.equals(getUpdatedAt(), task.getUpdatedAt());
       }
@@ -126,6 +150,9 @@ public final class Task implements Model {
       .append(getStatus())
       .append(getTeam())
       .append(getTaskImageS3Key())
+      .append(getLatitude())
+      .append(getLongitude())
+      .append(getAddress())
       .append(getCreatedAt())
       .append(getUpdatedAt())
       .toString()
@@ -143,6 +170,9 @@ public final class Task implements Model {
       .append("status=" + String.valueOf(getStatus()) + ", ")
       .append("team=" + String.valueOf(getTeam()) + ", ")
       .append("taskImageS3Key=" + String.valueOf(getTaskImageS3Key()) + ", ")
+      .append("latitude=" + String.valueOf(getLatitude()) + ", ")
+      .append("longitude=" + String.valueOf(getLongitude()) + ", ")
+      .append("address=" + String.valueOf(getAddress()) + ", ")
       .append("createdAt=" + String.valueOf(getCreatedAt()) + ", ")
       .append("updatedAt=" + String.valueOf(getUpdatedAt()))
       .append("}")
@@ -169,6 +199,9 @@ public final class Task implements Model {
       null,
       null,
       null,
+      null,
+      null,
+      null,
       null
     );
   }
@@ -180,7 +213,10 @@ public final class Task implements Model {
       dateCreated,
       status,
       team,
-      taskImageS3Key);
+      taskImageS3Key,
+      latitude,
+      longitude,
+      address);
   }
   public interface TitleStep {
     BuildStep title(String title);
@@ -195,6 +231,9 @@ public final class Task implements Model {
     BuildStep status(TaskStatusEnum status);
     BuildStep team(Team team);
     BuildStep taskImageS3Key(String taskImageS3Key);
+    BuildStep latitude(String latitude);
+    BuildStep longitude(String longitude);
+    BuildStep address(String address);
   }
   
 
@@ -206,6 +245,9 @@ public final class Task implements Model {
     private TaskStatusEnum status;
     private Team team;
     private String taskImageS3Key;
+    private String latitude;
+    private String longitude;
+    private String address;
     @Override
      public Task build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
@@ -217,7 +259,10 @@ public final class Task implements Model {
           dateCreated,
           status,
           team,
-          taskImageS3Key);
+          taskImageS3Key,
+          latitude,
+          longitude,
+          address);
     }
     
     @Override
@@ -257,6 +302,24 @@ public final class Task implements Model {
         return this;
     }
     
+    @Override
+     public BuildStep latitude(String latitude) {
+        this.latitude = latitude;
+        return this;
+    }
+    
+    @Override
+     public BuildStep longitude(String longitude) {
+        this.longitude = longitude;
+        return this;
+    }
+    
+    @Override
+     public BuildStep address(String address) {
+        this.address = address;
+        return this;
+    }
+    
     /**
      * @param id id
      * @return Current Builder instance, for fluent method chaining
@@ -269,14 +332,17 @@ public final class Task implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, String title, String body, Temporal.DateTime dateCreated, TaskStatusEnum status, Team team, String taskImageS3Key) {
+    private CopyOfBuilder(String id, String title, String body, Temporal.DateTime dateCreated, TaskStatusEnum status, Team team, String taskImageS3Key, String latitude, String longitude, String address) {
       super.id(id);
       super.title(title)
         .body(body)
         .dateCreated(dateCreated)
         .status(status)
         .team(team)
-        .taskImageS3Key(taskImageS3Key);
+        .taskImageS3Key(taskImageS3Key)
+        .latitude(latitude)
+        .longitude(longitude)
+        .address(address);
     }
     
     @Override
@@ -307,6 +373,21 @@ public final class Task implements Model {
     @Override
      public CopyOfBuilder taskImageS3Key(String taskImageS3Key) {
       return (CopyOfBuilder) super.taskImageS3Key(taskImageS3Key);
+    }
+    
+    @Override
+     public CopyOfBuilder latitude(String latitude) {
+      return (CopyOfBuilder) super.latitude(latitude);
+    }
+    
+    @Override
+     public CopyOfBuilder longitude(String longitude) {
+      return (CopyOfBuilder) super.longitude(longitude);
+    }
+    
+    @Override
+     public CopyOfBuilder address(String address) {
+      return (CopyOfBuilder) super.address(address);
     }
   }
   
