@@ -43,15 +43,24 @@ public class TaskDetailActivity extends AppCompatActivity {
         String taskNameStr = null;
         String taskDescStr = null;
         String taskStatusStr = null;
+        String taskLatitude = null;
+        String taskLongitude = null;
+        String taskAddress = null;
         if(callingIntent != null) {
             taskNameStr = callingIntent.getStringExtra(MainActivity.TASK_NAME_TAG);
             taskDescStr = callingIntent.getStringExtra(MainActivity.TASK_DESC_TAG);
             taskStatusStr = callingIntent.getStringExtra(MainActivity.TASK_STATUS_TAG);
+            taskLatitude = callingIntent.getStringExtra(MainActivity.TASK_LATITUDE_EXTRA_TAG);
+            taskLongitude = callingIntent.getStringExtra(MainActivity.TASK_LONGITUDE_EXTRA_TAG);
+            taskAddress = callingIntent.getStringExtra(MainActivity.TASK_ADDRESS_EXTRA_TAG);
         }
 
         TextView taskNameTextView = (TextView) findViewById(R.id.TaskDetailActivityLabelTextView);
         TextView taskDescTextView = (TextView) findViewById(R.id.TaskDetailActivityTaskDescription);
         TextView taskStatusTextView = (TextView) findViewById(R.id.TaskDetailActivityTaskStatus);
+        TextView taskLatitudeTextview = (TextView) findViewById(R.id.TaskDetailActivityLatitude);
+        TextView taskLongitudeTextview = (TextView) findViewById(R.id.TaskDetailActivityLongitude);
+        TextView taskAddressTextview = (TextView) findViewById(R.id.TaskDetailActivityAddress);
         if(taskNameStr != null && !taskNameStr.equals("")){
             taskNameTextView.setText(taskNameStr);
         } else {
@@ -66,6 +75,21 @@ public class TaskDetailActivity extends AppCompatActivity {
             taskStatusTextView.setText(taskStatusStr);
         } else {
             taskStatusTextView.setText("No Task Status");
+        }
+        if(taskLatitude != null && !taskLatitude.equals("")){
+            taskLatitudeTextview.setText("Latitude: " + taskLatitude);
+        } else {
+            taskLatitudeTextview.setText("No Latitude Provided.");
+        }
+        if(taskLongitude != null && !taskLongitude.equals("")){
+            taskLongitudeTextview.setText("Longitude: " + taskLongitude);
+        } else {
+            taskLongitudeTextview.setText("No Longitude Provided.");
+        }
+        if(taskAddress != null && !taskAddress.equals("")){
+            taskAddressTextview.setText("Address: " + taskAddress);
+        } else {
+            taskAddressTextview.setText("No Address Provided.");
         }
     }
 

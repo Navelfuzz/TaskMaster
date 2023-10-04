@@ -16,6 +16,9 @@ subscription OnCreateTask($filter: ModelSubscriptionTaskFilterInput) {
       __typename
     }
     taskImageS3Key
+    latitude
+    longitude
+    address
     createdAt
     updatedAt
     __typename
@@ -38,6 +41,9 @@ subscription OnUpdateTask($filter: ModelSubscriptionTaskFilterInput) {
       __typename
     }
     taskImageS3Key
+    latitude
+    longitude
+    address
     createdAt
     updatedAt
     __typename
@@ -60,6 +66,9 @@ subscription OnDeleteTask($filter: ModelSubscriptionTaskFilterInput) {
       __typename
     }
     taskImageS3Key
+    latitude
+    longitude
+    address
     createdAt
     updatedAt
     __typename

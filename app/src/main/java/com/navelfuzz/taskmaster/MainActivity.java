@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.Manifest;
 
 import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.graphql.model.ModelQuery;
@@ -51,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
     public static final String TASK_DESC_TAG = "taskDesc";
     public static final String TASK_STATUS_TAG = "taskStatus";
     public static final String TASK_ID_EXTRA_TAG = "taskId";
+    public static final String TASK_LATITUDE_EXTRA_TAG = "taskLat";
+    public static final String TASK_LONGITUDE_EXTRA_TAG = "taskLon";
+    public static final String TASK_ADDRESS_EXTRA_TAG = "taskAddress";
 
     List<Task> tasks = new ArrayList<>();
     ViewAdapter adapter;
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
-
+        requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         //createTeamInstances();
         setupSettingsButton();
         setupAddTaskButton();

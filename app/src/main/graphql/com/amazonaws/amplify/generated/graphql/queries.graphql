@@ -16,6 +16,9 @@ query GetTask($id: ID!) {
       __typename
     }
     taskImageS3Key
+    latitude
+    longitude
+    address
     createdAt
     updatedAt
     __typename
@@ -36,6 +39,9 @@ query ListTasks(
       status
       teamId
       taskImageS3Key
+      latitude
+      longitude
+      address
       createdAt
       updatedAt
       __typename
@@ -101,6 +107,9 @@ query TasksByTeamIdAndTitle(
       status
       teamId
       taskImageS3Key
+      latitude
+      longitude
+      address
       createdAt
       updatedAt
       __typename
