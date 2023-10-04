@@ -33,11 +33,12 @@ android {
 
 dependencies {
 
-    implementation 'com.amplifyframework:aws-api:2.13.0'
-    implementation 'com.amplifyframework:aws-datastore:2.11.2'
+    implementation 'com.amplifyframework:core:2.13.2'
+    implementation 'com.amplifyframework:aws-api:2.13.2'
+    implementation 'com.amplifyframework:aws-datastore:2.13.2'
     implementation 'com.amplifyframework:aws-storage-s3:2.13.2'
     implementation 'com.amplifyframework:aws-analytics-pinpoint:2.13.2'
-    implementation 'com.amplifyframework:aws-preditcions:2.13.2'
+    implementation 'com.amplifyframework:aws-predictions:2.13.2'
     implementation 'com.amplifyframework:aws-auth-cognito:2.13.2'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
 

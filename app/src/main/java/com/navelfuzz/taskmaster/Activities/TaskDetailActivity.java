@@ -18,13 +18,13 @@ import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Task;
 import com.amplifyframework.predictions.PredictionsException;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
 
 public class TaskDetailActivity extends AppCompatActivity {
     private static String TAG = "TaskDetailActivity";

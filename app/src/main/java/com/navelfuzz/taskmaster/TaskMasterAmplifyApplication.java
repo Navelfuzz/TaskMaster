@@ -11,6 +11,8 @@ import com.amplifyframework.core.Amplify;
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin;
 import com.amplifyframework.predictions.aws.AWSPredictionsPlugin;
 
+
+
 public class TaskMasterAmplifyApplication extends Application {
   public static final String TAG = "taskmasterapplication";
 
