@@ -23,6 +23,9 @@
       },
       "analytics": {
         "temptaskmaster": {}
+      },
+      "predictions": {
+        "speechGenerator804d518f": {}
       }
     }
   }
