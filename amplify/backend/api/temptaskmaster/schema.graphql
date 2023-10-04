@@ -11,6 +11,9 @@ type Task @model @auth (rules: [{allow: public}]) {
     teamId: ID! @index(name: "byTeam", sortKeyFields: ["title"])
     team: Team @belongsTo(fields: ["teamId"])
     taskImageS3Key: String
+    latitude: String
+    longitude: String
+    address: String
 }
 
 enum TaskStatusEnum {
