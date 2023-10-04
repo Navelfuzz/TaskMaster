@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.Manifest;
 
+import com.amplifyframework.analytics.AnalyticsEvent;
 import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.auth.AuthUserAttribute;
@@ -38,6 +39,7 @@ import com.amplifyframework.datastore.generated.model.Team;
 import com.amplifyframework.auth.AuthUserAttributeKey;
 import com.amplifyframework.auth.options.AuthSignUpOptions;
 
+import java.util.Date;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -63,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        logAppStartup();
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
@@ -165,6 +169,17 @@ public class MainActivity extends AppCompatActivity {
             failure -> Log.i(TAG, "Did not read tasks successfully.")
         );
     }
+
+    void logAppStartup() {
+        AnalyticsEvent event = AnalyticsEvent.builder()
+            .name("appOpened")
+            .addProperty("time", Long.toString(new Date().getTime()))
+            .addProperty("trackingEvent", "MainActivity opened")
+            .build();
+
+        Amplify.Analytics.recordEvent(event);
+    }
+
 }
 //    void createTeamInstances() {
 //        Team team1 = Team.builder()
