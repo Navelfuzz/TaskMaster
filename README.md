@@ -230,7 +230,7 @@ Added Cognito for Auth to application.
 
 ## Screenshots for Lab: Class 37
 
-[//]: # (<img src="screenshots/labXX/XX.png" alt="XX" width="200"/>)
+<img src="screenshots/lab39/laundryLocation.png" alt="Added Task with Location" width="200"/>
 
 [//]: # (<img src="screenshots/labXX/XX.png" alt="XX" width="200"/>)
 

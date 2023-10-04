@@ -19,7 +19,7 @@ Update your daily change log with today’s changes.
 
 ### Screenshots
 
-[//]: # (<img src="../screenshots/labXX/XX.png" alt="XX" width="200"/>)
+<img src="../screenshots/lab39/laundryLocation.png" alt="Added Task with Location" width="200"/>
 
 [//]: # (<img src="../screenshots/labXX/XX.png" alt="XX" width="200"/>)
 
