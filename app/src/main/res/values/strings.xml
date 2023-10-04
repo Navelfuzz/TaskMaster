@@ -20,6 +20,7 @@
     <string name="add_username">Username</string>
     <string name="save">Save</string>
     <string name="blank_task_name" />
+    <string name="do_something">Do Something</string>
     <string name="alpha_team">Alpha Team</string>
     <string name="bravo_team">Bravo Team</string>
     <string name="delta_team">Delta Team</string>
@@ -39,4 +40,8 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="add_task_image">Task Image</string>
+    <string name="task_location">Task Location:</string>
+    <string name="lat">Latitude:</string>
+    <string name="lon">Longitude:</string>
+    <string name="address">Address:</string>
 </resources>
