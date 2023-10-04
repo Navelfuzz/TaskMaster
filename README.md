@@ -70,6 +70,9 @@ ___
 ## Change Log
 Screenshots for current lab always at bottom of this page
 
+### Class 41: Analytics & Text to Speech
+
+
 ### Class 39: Location
 Added Location services, Task Detail activity now shows location of task if it exists.
 
@@ -233,9 +236,7 @@ Added Cognito for Auth to application.
 [//]: # (<img src="screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
 
 
-## Screenshots for Lab: Class 39
-
-<img src="screenshots/lab39/laundryLocation.png" alt="Added Task with Location" width="200"/>
+## Screenshots for Lab: Class 41
 
 [//]: # (<img src="screenshots/labXX/XX.png" alt="XX" width="200"/>)
 

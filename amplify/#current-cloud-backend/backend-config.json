@@ -1,4 +1,10 @@
 {
+  "analytics": {
+    "temptaskmaster": {
+      "providerPlugin": "awscloudformation",
+      "service": "Pinpoint"
+    }
+  },
   "api": {
     "temptaskmaster": {
       "dependsOn": [],

@@ -253,6 +253,34 @@
         }
       }
     },
+    "analyticstemptaskmaster": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
+        "Parameters": {
+          "appName": "temptaskmaster",
+          "roleName": "pinpointLambdaRole547823e4",
+          "cloudformationPolicyName": "cloudformationPolicy547823e4",
+          "cloudWatchPolicyName": "cloudWatchPolicy547823e4",
+          "pinpointPolicyName": "pinpointPolicy547823e4",
+          "authPolicyName": "pinpoint_amplify_547823e4",
+          "unauthPolicyName": "pinpoint_amplify_547823e4",
+          "authRoleName": {
+            "Ref": "AuthRoleName"
+          },
+          "unauthRoleName": {
+            "Ref": "UnauthRoleName"
+          },
+          "authRoleArn": {
+            "Fn::GetAtt": [
+              "AuthRole",
+              "Arn"
+            ]
+          },
+          "env": "dev"
+        }
+      }
+    },
     "UpdateRolesWithIDPFunction": {
       "DependsOn": [
         "AuthRole",

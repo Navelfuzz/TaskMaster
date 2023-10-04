@@ -1,0 +1,21 @@
+{
+    "appName": "temptaskmaster",
+    "roleName": "pinpointLambdaRole547823e4",
+    "cloudformationPolicyName": "cloudformationPolicy547823e4",
+    "cloudWatchPolicyName": "cloudWatchPolicy547823e4",
+    "pinpointPolicyName": "pinpointPolicy547823e4",
+    "authPolicyName": "pinpoint_amplify_547823e4",
+    "unauthPolicyName": "pinpoint_amplify_547823e4",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
