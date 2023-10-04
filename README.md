@@ -10,7 +10,8 @@
 * [Lab 34: Polish and Publish TaskMaster](#class-34-polish-and-publish-taskmaster)
 * [Lab 36: Cognito](#class-36-cognito)
 * [Lab 37: S3 Image Uploads](#class-37-s3-image-uploads)
-* 
+* [lab 39: Location](#class-39-location)
+
 ___
 
 ### Directory of individual lab Readme files: [readme-catalog](/readme-catalog/)
@@ -25,6 +26,8 @@ ___
 * [Lab 34: Polish and Publish TaskMaster](/readme-catalog/lab34.md)
 * [Lab 36: Cognito](/readme-catalog/lab36.md)
 * [Lab 37: S3 Image Uploads](/readme-catalog/lab37.md)
+* [lab 39: Location](/readme-catalog/lab39.md)
+
 ___
 
 ## Description
@@ -68,6 +71,8 @@ ___
 Screenshots for current lab always at bottom of this page
 
 ### Class 39: Location
+Added Location services, Task Detail activity now shows location of task if it exists.
+
 
 ### Class 37: S3 Image Uploads
 Implemented S3 Storage in order to upload images associated with user tasks.
@@ -228,7 +233,7 @@ Added Cognito for Auth to application.
 [//]: # (<img src="screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
 
 
-## Screenshots for Lab: Class 37
+## Screenshots for Lab: Class 39
 
 <img src="screenshots/lab39/laundryLocation.png" alt="Added Task with Location" width="200"/>
 
