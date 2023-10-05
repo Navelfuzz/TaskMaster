@@ -102,6 +102,21 @@
             }
         }
     },
+    "predictions": {
+        "plugins": {
+            "awsPredictionsPlugin": {
+                "defaultRegion": "us-east-1",
+                "convert": {
+                    "speechGenerator": {
+                        "voice": "Kimberly",
+                        "language": "en-US",
+                        "region": "us-east-1",
+                        "defaultNetworkPolicy": "auto"
+                    }
+                }
+            }
+        }
+    },
     "storage": {
         "plugins": {
             "awsS3StoragePlugin": {

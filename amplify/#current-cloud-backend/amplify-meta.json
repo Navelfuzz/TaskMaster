@@ -37,7 +37,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apitemptaskmaster"
       },
-      "lastPushTimeStamp": "2023-10-05T06:21:02.538Z",
+      "lastPushTimeStamp": "2023-10-05T06:28:37.378Z",
       "lastPushDirHash": "PewvlSqTUFqbQwnWoDQoNRVeJY8="
     }
   },
@@ -71,7 +71,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/auth/temptaskmaster0b84a7f5-cloudformation-template.json",
         "logicalId": "authtemptaskmaster0b84a7f5"
       },
-      "lastPushTimeStamp": "2023-10-05T06:21:02.540Z",
+      "lastPushTimeStamp": "2023-10-05T06:28:37.381Z",
       "output": {
         "UserPoolId": "us-east-1_7RUmz4F6C",
         "AppClientIDWeb": "13mb988uf3qld36o4a44ca234e",
@@ -89,7 +89,7 @@
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "lastPushTimeStamp": "2023-10-05T06:21:02.541Z",
+      "lastPushTimeStamp": "2023-10-05T06:28:37.382Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storagetaskmasterStorage"
@@ -109,13 +109,31 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
         "logicalId": "analyticstaskmasterAnalytics"
       },
-      "lastPushTimeStamp": "2023-10-05T06:21:03.274Z",
+      "lastPushTimeStamp": "2023-10-05T06:28:37.383Z",
       "output": {
         "appName": "taskmasterAnalytics-dev",
         "Region": "us-east-1",
         "Id": "423d3535440d47158096641be12d813f"
       },
       "lastPushDirHash": "wqAKDJDrYUAkI0+mXYbvhi4SfCg="
+    }
+  },
+  "predictions": {
+    "speechGeneratora423a233": {
+      "providerPlugin": "awscloudformation",
+      "service": "Polly",
+      "convertType": "speechGenerator",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/predictions/speechGeneratora423a233-template.json",
+        "logicalId": "predictionsspeechGeneratora423a233"
+      },
+      "lastPushTimeStamp": "2023-10-05T06:28:38.008Z",
+      "output": {
+        "voice": "Kimberly",
+        "language": "en-US",
+        "region": "us-east-1"
+      },
+      "lastPushDirHash": "gFXwGmHfHF3Ji9YwbfAJYIaLYms="
     }
   }
 }

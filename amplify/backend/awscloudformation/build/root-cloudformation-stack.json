@@ -281,6 +281,27 @@
         }
       }
     },
+    "predictionsspeechGeneratora423a233": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/predictions/speechGeneratora423a233-template.json",
+        "Parameters": {
+          "resourceName": "speechGeneratora423a233",
+          "convertPolicyName": "speechGeneratorPolicya423a233",
+          "authRoleName": {
+            "Ref": "AuthRoleName"
+          },
+          "unauthRoleName": {
+            "Ref": "UnauthRoleName"
+          },
+          "convertType": "speechGenerator",
+          "language": "en-US",
+          "voice": "Kimberly",
+          "access": "authAndGuest",
+          "env": "dev"
+        }
+      }
+    },
     "UpdateRolesWithIDPFunction": {
       "DependsOn": [
         "AuthRole",

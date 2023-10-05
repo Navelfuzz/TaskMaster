@@ -23,6 +23,9 @@
       },
       "analytics": {
         "taskmasterAnalytics": {}
+      },
+      "predictions": {
+        "speechGeneratora423a233": {}
       }
     }
   }
