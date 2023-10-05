@@ -11,6 +11,7 @@
 * [Lab 36: Cognito](#class-36-cognito)
 * [Lab 37: S3 Image Uploads](#class-37-s3-image-uploads)
 * [lab 39: Location](#class-39-location)
+* [Lab 41: Analytics & Text to Speech](#class-41-analytics-and-text-to-speech)
 
 ___
 
@@ -27,6 +28,7 @@ ___
 * [Lab 36: Cognito](/readme-catalog/lab36.md)
 * [Lab 37: S3 Image Uploads](/readme-catalog/lab37.md)
 * [lab 39: Location](/readme-catalog/lab39.md)
+* [Lab 41: Analytics & Text to Speech](/readme-catalog/lab41.md)
 
 ___
 
@@ -69,6 +71,22 @@ ___
 
 ## Change Log
 Screenshots for current lab always at bottom of this page
+
+### Class 41: Analytics & Text to Speech
+*Implemented on Branch lab41b*
+
+Added three new features to the application:
+1. Analytics through Amazon Pinpoint
+2. Text to Speech through Amazon Polly
+3. Spanish Translation through Amazon Translate
+
+Taskmaster now has the following Amplify resources:
+* Api (GraphQL database)
+* Auth (Cognito)
+* Storage (S3)
+* Analytics (Pinpoint)
+* Predictions (Polly: Text to Speech)
+* Predictions (Translate: Spanish Translation)
 
 ### Class 39: Location
 Added Location services, Task Detail activity now shows location of task if it exists.
@@ -233,11 +251,10 @@ Added Cognito for Auth to application.
 [//]: # (<img src="screenshots/labXX/XXX.png" alt="XXX" width="200"/>)
 
 
-## Screenshots for Lab: Class 39
+## Screenshots for Lab: Class 41
 
-<img src="screenshots/lab39/laundryLocation.png" alt="Added Task with Location" width="200"/>
+<img src="screenshots/lab41/espan.png" alt="Spanish Translation" width="200"/>
 
-[//]: # (<img src="screenshots/labXX/XX.png" alt="XX" width="200"/>)
+<img src="screenshots/lab41/taskDescripActiv.png" alt="Task Description Activity" width="200"/>
 
-[//]: # (<img src="screenshots/labXX/XX.png" alt="XX" width="200"/>)
-
+<img src="screenshots/lab41/awsEvents.png" alt="Events Table in AWS Pinpoint" width="650"/>

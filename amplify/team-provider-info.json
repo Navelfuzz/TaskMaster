@@ -20,6 +20,13 @@
       },
       "storage": {
         "taskmasterStorage": {}
+      },
+      "analytics": {
+        "taskmasterAnalytics": {}
+      },
+      "predictions": {
+        "speechGeneratora423a233": {},
+        "translateText644fb09e": {}
       }
     }
   }

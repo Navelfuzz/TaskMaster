@@ -56,5 +56,16 @@
             "Bucket": "temptaskmasterfdd431ec02944c0f96198a6930726e1c65146-dev",
             "Region": "us-east-1"
         }
+    },
+    "PinpointAnalytics": {
+        "Default": {
+            "AppId": "423d3535440d47158096641be12d813f",
+            "Region": "us-east-1"
+        }
+    },
+    "PinpointTargeting": {
+        "Default": {
+            "Region": "us-east-1"
+        }
     }
 }
