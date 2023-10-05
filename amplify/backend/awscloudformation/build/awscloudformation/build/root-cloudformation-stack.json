@@ -302,6 +302,27 @@
         }
       }
     },
+    "predictionstranslateText644fb09e": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/predictions/translateText644fb09e-template.json",
+        "Parameters": {
+          "resourceName": "translateText644fb09e",
+          "convertPolicyName": "translateTextPolicy644fb09e",
+          "authRoleName": {
+            "Ref": "AuthRoleName"
+          },
+          "unauthRoleName": {
+            "Ref": "UnauthRoleName"
+          },
+          "convertType": "translateText",
+          "sourceLang": "en",
+          "targetLang": "es",
+          "access": "authAndGuest",
+          "env": "dev"
+        }
+      }
+    },
     "UpdateRolesWithIDPFunction": {
       "DependsOn": [
         "AuthRole",

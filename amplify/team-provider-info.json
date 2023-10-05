@@ -25,7 +25,8 @@
         "taskmasterAnalytics": {}
       },
       "predictions": {
-        "speechGeneratora423a233": {}
+        "speechGeneratora423a233": {},
+        "translateText644fb09e": {}
       }
     }
   }

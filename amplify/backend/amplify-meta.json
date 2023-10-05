@@ -37,7 +37,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apitemptaskmaster"
       },
-      "lastPushTimeStamp": "2023-10-05T06:28:37.378Z",
+      "lastPushTimeStamp": "2023-10-05T06:32:15.158Z",
       "lastPushDirHash": "PewvlSqTUFqbQwnWoDQoNRVeJY8="
     }
   },
@@ -71,7 +71,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/auth/temptaskmaster0b84a7f5-cloudformation-template.json",
         "logicalId": "authtemptaskmaster0b84a7f5"
       },
-      "lastPushTimeStamp": "2023-10-05T06:28:37.381Z",
+      "lastPushTimeStamp": "2023-10-05T06:32:15.160Z",
       "output": {
         "UserPoolId": "us-east-1_7RUmz4F6C",
         "AppClientIDWeb": "13mb988uf3qld36o4a44ca234e",
@@ -89,7 +89,7 @@
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "lastPushTimeStamp": "2023-10-05T06:28:37.382Z",
+      "lastPushTimeStamp": "2023-10-05T06:32:15.162Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storagetaskmasterStorage"
@@ -109,7 +109,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
         "logicalId": "analyticstaskmasterAnalytics"
       },
-      "lastPushTimeStamp": "2023-10-05T06:28:37.383Z",
+      "lastPushTimeStamp": "2023-10-05T06:32:15.164Z",
       "output": {
         "appName": "taskmasterAnalytics-dev",
         "Region": "us-east-1",
@@ -127,13 +127,29 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/predictions/speechGeneratora423a233-template.json",
         "logicalId": "predictionsspeechGeneratora423a233"
       },
-      "lastPushTimeStamp": "2023-10-05T06:28:38.008Z",
+      "lastPushTimeStamp": "2023-10-05T06:32:15.166Z",
       "output": {
         "voice": "Kimberly",
         "language": "en-US",
         "region": "us-east-1"
       },
       "lastPushDirHash": "gFXwGmHfHF3Ji9YwbfAJYIaLYms="
+    },
+    "translateText644fb09e": {
+      "providerPlugin": "awscloudformation",
+      "service": "Translate",
+      "convertType": "translateText",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-temptaskmaster-dev-65146-deployment/amplify-cfn-templates/predictions/translateText644fb09e-template.json",
+        "logicalId": "predictionstranslateText644fb09e"
+      },
+      "lastPushTimeStamp": "2023-10-05T06:32:15.757Z",
+      "output": {
+        "targetLang": "es",
+        "sourceLang": "en",
+        "region": "us-east-1"
+      },
+      "lastPushDirHash": "eT7MMORoVlP1rH7RzJW8G2hQxo0="
     }
   }
 }

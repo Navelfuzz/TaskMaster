@@ -112,6 +112,12 @@
                         "language": "en-US",
                         "region": "us-east-1",
                         "defaultNetworkPolicy": "auto"
+                    },
+                    "translateText": {
+                        "targetLang": "es",
+                        "sourceLang": "en",
+                        "region": "us-east-1",
+                        "defaultNetworkPolicy": "auto"
                     }
                 }
             }
