@@ -47,4 +47,12 @@
     <string name="announce">Announce</string>
     <string name="translate">Translate (es)</string>
     <string name="user_added_image">User Added Image</string>
+    <string name="no_task_name">No Task Name</string>
+    <string name="no_task_description">No Task Description</string>
+    <string name="no_task_status">No Task Status</string>
+    <string name="latitude">"Latitude: "</string>
+    <string name="no_latitude_provided">No Latitude Provided.</string>
+    <string name="longitude">"Longitude: "</string>
+    <string name="no_longitude_provided">No Longitude Provided.</string>
+    <string name="no_address_provided">No Address Provided.</string>
 </resources>

@@ -65,7 +65,7 @@ public class TaskDetailActivity extends AppCompatActivity {
         setupTranslateButton();
     }
 
-    void setupTaskNameTextView(){
+    void setupTaskNameTextView() {
 //        Intent callingIntent = getIntent();
         String taskNameStr = null;
         String taskDescStr = null;
@@ -73,7 +73,7 @@ public class TaskDetailActivity extends AppCompatActivity {
         String taskLatitude = null;
         String taskLongitude = null;
         String taskAddress = null;
-        if(callingIntent != null) {
+        if (callingIntent != null) {
             taskNameStr = callingIntent.getStringExtra(MainActivity.TASK_NAME_TAG);
             taskDescStr = callingIntent.getStringExtra(MainActivity.TASK_DESC_TAG);
             taskStatusStr = callingIntent.getStringExtra(MainActivity.TASK_STATUS_TAG);
@@ -88,45 +88,45 @@ public class TaskDetailActivity extends AppCompatActivity {
 //        TextView taskLatitudeTextview = (TextView) findViewById(R.id.TaskDetailActivityLatitude);
 //        TextView taskLongitudeTextview = (TextView) findViewById(R.id.TaskDetailActivityLongitude);
 //        TextView taskAddressTextview = (TextView) findViewById(R.id.TaskDetailActivityAddress);
-        if(taskNameStr != null && !taskNameStr.equals("")){
+        if (taskNameStr != null && !taskNameStr.equals("")) {
             taskNameTextView.setText(taskNameStr);
         } else {
             taskNameTextView.setText("No Task Name");
         }
-        if(taskDescStr != null && !taskDescStr.equals("")){
+        if (taskDescStr != null && !taskDescStr.equals("")) {
             taskDescTextView.setText(taskDescStr);
         } else {
             taskDescTextView.setText("No Task Description");
         }
-        if(taskStatusStr != null && !taskStatusStr.equals("")){
+        if (taskStatusStr != null && !taskStatusStr.equals("")) {
             taskStatusTextView.setText(taskStatusStr);
         } else {
             taskStatusTextView.setText("No Task Status");
         }
-        if(taskLatitude != null && !taskLatitude.equals("")){
+        if (taskLatitude != null && !taskLatitude.equals("")) {
             taskLatitudeTextview.setText("Latitude: " + taskLatitude);
         } else {
             taskLatitudeTextview.setText("No Latitude Provided.");
         }
-        if(taskLongitude != null && !taskLongitude.equals("")){
+        if (taskLongitude != null && !taskLongitude.equals("")) {
             taskLongitudeTextview.setText("Longitude: " + taskLongitude);
         } else {
             taskLongitudeTextview.setText("No Longitude Provided.");
         }
-        if(taskAddress != null && !taskAddress.equals("")){
+        if (taskAddress != null && !taskAddress.equals("")) {
             taskAddressTextview.setText("Address: " + taskAddress);
         } else {
             taskAddressTextview.setText("No Address Provided.");
         }
     }
 
-    void setupTaskImageView(){
+    void setupTaskImageView() {
         String taskId = "";
-        if(callingIntent != null) {
+        if (callingIntent != null) {
             taskId = callingIntent.getStringExtra(MainActivity.TASK_ID_EXTRA_TAG);
         }
 
-        if(!taskId.equals("")) {
+        if (!taskId.equals("")) {
             Amplify.API.query(
                 ModelQuery.get(Task.class, taskId),
                 success -> {
@@ -135,7 +135,7 @@ public class TaskDetailActivity extends AppCompatActivity {
                     populateImageView();
                 },
                 failure -> {
-                    Log.i(TAG,"Failed to query task from DB: " + failure.getMessage());
+                    Log.i(TAG, "Failed to query task from DB: " + failure.getMessage());
                 }
             );
         }
@@ -144,14 +144,14 @@ public class TaskDetailActivity extends AppCompatActivity {
 
     void populateImageView() {
         // truncate folder name from product's s3key
-        if(currentTask.getTaskImageS3Key() != null) {
+        if (currentTask.getTaskImageS3Key() != null) {
             int cut = currentTask.getTaskImageS3Key().lastIndexOf('/');
-            if(cut != -1) {
+            if (cut != -1) {
                 s3ImageKey = currentTask.getTaskImageS3Key().substring(cut + 1);
             }
         }
 
-        if(s3ImageKey != null && !s3ImageKey.isEmpty()) {
+        if (s3ImageKey != null && !s3ImageKey.isEmpty()) {
             Amplify.Storage.downloadFile(
                 s3ImageKey,
                 new File(getApplication().getFilesDir(), s3ImageKey),
@@ -165,10 +165,11 @@ public class TaskDetailActivity extends AppCompatActivity {
         }
     }
 
-    void setupAnnounceButton(){
+    void setupAnnounceButton() {
         announceButton.setOnClickListener(view -> {
-            TextView taskTextView = findViewById(R.id.TaskDetailActivityLabelTextView);
-            String taskName = taskTextView.getText().toString();
+//            TextView taskTextView = findViewById(R.id.TaskDetailActivityLabelTextView);
+//            String taskName = taskTextView.getText().toString();
+            String taskName = taskNameTextView.getText().toString();
             Amplify.Predictions.convertTextToSpeech(
                 taskName,
                 result -> playAudio(result.getAudioData()),
@@ -177,24 +178,44 @@ public class TaskDetailActivity extends AppCompatActivity {
         });
     }
 
-    private void playAudio(InputStream data){
+    private void playAudio(InputStream data) {
         File mp3File = new File(getCacheDir(), "audio.mp3");
 
-        try(OutputStream out = new FileOutputStream(mp3File)){
-            byte[] buffer = new byte[8 * 1_024];
+        try (OutputStream out = new FileOutputStream(mp3File)) {
+            byte[] buffer = new byte[8 * 1024];
             int bytesRead;
+
             while ((bytesRead = data.read(buffer)) != -1) {
                 out.write(buffer, 0, bytesRead);
             }
+
+            Log.i(TAG, "audio file finished reading");
+
             mp.reset();
             mp.setOnPreparedListener(MediaPlayer::start);
             mp.setDataSource(new FileInputStream(mp3File).getFD());
-            mp.prepareAsync();
-        } catch(IOException ioe){
-            Log.e(TAG,"Error writing audio file");
-        }
 
+            Log.i(TAG, "Audio played successfully");
+        } catch (IOException ioe) {
+            Log.e(TAG, "Error writing audio file", ioe);
+        }
     }
+
+//        try(OutputStream out = new FileOutputStream(mp3File)){
+//            byte[] buffer = new byte[8 * 1_024];
+//            int bytesRead;
+//            while ((bytesRead = data.read(buffer)) != -1) {
+//                out.write(buffer, 0, bytesRead);
+//            }
+//            mp.reset();
+//            mp.setOnPreparedListener(MediaPlayer::start);
+//            mp.setDataSource(new FileInputStream(mp3File).getFD());
+//            mp.prepareAsync();
+//        } catch(IOException ioe){
+//            Log.e(TAG,"Error writing audio file", ioe);
+//        }
+
+    
 
     private void setupTranslateButton(){
 
