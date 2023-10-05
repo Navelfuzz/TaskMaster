@@ -167,9 +167,8 @@ public class TaskDetailActivity extends AppCompatActivity {
 
     void setupAnnounceButton() {
         announceButton.setOnClickListener(view -> {
-//            TextView taskTextView = findViewById(R.id.TaskDetailActivityLabelTextView);
-//            String taskName = taskTextView.getText().toString();
-            String taskName = taskNameTextView.getText().toString();
+            TextView taskTextView = findViewById(R.id.TaskDetailActivityLabelTextView);
+            String taskName = taskTextView.getText().toString();
             Amplify.Predictions.convertTextToSpeech(
                 taskName,
                 result -> playAudio(result.getAudioData()),
@@ -200,22 +199,6 @@ public class TaskDetailActivity extends AppCompatActivity {
             Log.e(TAG, "Error writing audio file", ioe);
         }
     }
-
-//        try(OutputStream out = new FileOutputStream(mp3File)){
-//            byte[] buffer = new byte[8 * 1_024];
-//            int bytesRead;
-//            while ((bytesRead = data.read(buffer)) != -1) {
-//                out.write(buffer, 0, bytesRead);
-//            }
-//            mp.reset();
-//            mp.setOnPreparedListener(MediaPlayer::start);
-//            mp.setDataSource(new FileInputStream(mp3File).getFD());
-//            mp.prepareAsync();
-//        } catch(IOException ioe){
-//            Log.e(TAG,"Error writing audio file", ioe);
-//        }
-
-    
 
     private void setupTranslateButton(){
 
