@@ -181,7 +181,7 @@ public class TaskDetailActivity extends AppCompatActivity {
         File mp3File = new File(getCacheDir(), "audio.mp3");
 
         try (OutputStream out = new FileOutputStream(mp3File)) {
-            byte[] buffer = new byte[8 * 1024];
+            byte[] buffer = new byte[8 * 1_024];
             int bytesRead;
 
             while ((bytesRead = data.read(buffer)) != -1) {
