@@ -193,6 +193,7 @@ public class TaskDetailActivity extends AppCompatActivity {
             mp.reset();
             mp.setOnPreparedListener(MediaPlayer::start);
             mp.setDataSource(new FileInputStream(mp3File).getFD());
+            mp.prepareAsync();
 
             Log.i(TAG, "Audio played successfully");
         } catch (IOException ioe) {
