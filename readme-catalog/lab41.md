@@ -28,6 +28,8 @@ Update your daily change log with today’s changes. Include a screenshot of the
 
 ### Screenshots
 
-[//]: # (<img src="screenshots/labXX/XX.png" alt="XX" width="200"/>)
+<img src="../screenshots/lab41/espan.png" alt="Spanish Translation" width="200"/>
 
-[//]: # (<img src="screenshots/labXX/XX.png" alt="XX" width="200"/>)
+<img src="../screenshots/lab41/taskDescripActiv.png" alt="Task Description Activity" width="200"/>
+
+<img src="../screenshots/lab41/awsEvents.png" alt="Events Table in AWS Pinpoint" width="650"/>
