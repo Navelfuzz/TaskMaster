@@ -44,4 +44,7 @@
     <string name="lat">Latitude:</string>
     <string name="lon">Longitude:</string>
     <string name="address">Address:</string>
+    <string name="announce">Announce</string>
+    <string name="translate">Translate (es)</string>
+    <string name="user_added_image">User Added Image</string>
 </resources>

@@ -2,7 +2,8 @@ package com.navelfuzz.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
+import android.media.MediaPlayer;
+import android.widget.Button;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -15,17 +16,32 @@ import com.navelfuzz.taskmaster.R;
 import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Task;
+import com.amplifyframework.predictions.PredictionsException;
+
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class TaskDetailActivity extends AppCompatActivity {
     private static String TAG = "TaskDetailActivity";
-
+    private final MediaPlayer mp = new MediaPlayer();
     Intent callingIntent;
     Task currentTask;
     String s3ImageKey;
+    TextView taskNameTextView;
+    TextView taskDescTextView;
+    TextView taskStatusTextView;
+    TextView taskLatitudeTextview;
+    TextView taskLongitudeTextview;
+    TextView taskAddressTextview;
 
     ImageView taskImageView;
+    Button announceButton;
+    Button translateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +49,20 @@ public class TaskDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_detail);
         callingIntent = getIntent();
         taskImageView = findViewById(R.id.TaskDetailActivityImageView);
+        announceButton = findViewById(R.id.TaskDetailActivityAnnounceTaskNameButton);
+        translateButton = findViewById(R.id.TaskDetailActivityTranslateButton);
+
+        taskNameTextView = (TextView) findViewById(R.id.TaskDetailActivityLabelTextView);
+        taskDescTextView = (TextView) findViewById(R.id.TaskDetailActivityTaskDescription);
+        taskStatusTextView = (TextView) findViewById(R.id.TaskDetailActivityTaskStatus);
+        taskLatitudeTextview = (TextView) findViewById(R.id.TaskDetailActivityLatitude);
+        taskLongitudeTextview = (TextView) findViewById(R.id.TaskDetailActivityLongitude);
+        taskAddressTextview = (TextView) findViewById(R.id.TaskDetailActivityAddress);
 
         setupTaskNameTextView();
         setupTaskImageView();
+        setupAnnounceButton();
+        setupTranslateButton();
     }
 
     void setupTaskNameTextView(){
@@ -55,12 +82,12 @@ public class TaskDetailActivity extends AppCompatActivity {
             taskAddress = callingIntent.getStringExtra(MainActivity.TASK_ADDRESS_EXTRA_TAG);
         }
 
-        TextView taskNameTextView = (TextView) findViewById(R.id.TaskDetailActivityLabelTextView);
-        TextView taskDescTextView = (TextView) findViewById(R.id.TaskDetailActivityTaskDescription);
-        TextView taskStatusTextView = (TextView) findViewById(R.id.TaskDetailActivityTaskStatus);
-        TextView taskLatitudeTextview = (TextView) findViewById(R.id.TaskDetailActivityLatitude);
-        TextView taskLongitudeTextview = (TextView) findViewById(R.id.TaskDetailActivityLongitude);
-        TextView taskAddressTextview = (TextView) findViewById(R.id.TaskDetailActivityAddress);
+//        TextView taskNameTextView = (TextView) findViewById(R.id.TaskDetailActivityLabelTextView);
+//        TextView taskDescTextView = (TextView) findViewById(R.id.TaskDetailActivityTaskDescription);
+//        TextView taskStatusTextView = (TextView) findViewById(R.id.TaskDetailActivityTaskStatus);
+//        TextView taskLatitudeTextview = (TextView) findViewById(R.id.TaskDetailActivityLatitude);
+//        TextView taskLongitudeTextview = (TextView) findViewById(R.id.TaskDetailActivityLongitude);
+//        TextView taskAddressTextview = (TextView) findViewById(R.id.TaskDetailActivityAddress);
         if(taskNameStr != null && !taskNameStr.equals("")){
             taskNameTextView.setText(taskNameStr);
         } else {
@@ -137,6 +164,105 @@ public class TaskDetailActivity extends AppCompatActivity {
             );
         }
     }
-}
 
+    void setupAnnounceButton(){
+        announceButton.setOnClickListener(view -> {
+            TextView taskTextView = findViewById(R.id.TaskDetailActivityLabelTextView);
+            String taskName = taskTextView.getText().toString();
+            Amplify.Predictions.convertTextToSpeech(
+                taskName,
+                result -> playAudio(result.getAudioData()),
+                error -> Log.e(TAG, "Audio conversion of product failed")
+            );
+        });
+    }
+
+    private void playAudio(InputStream data){
+        File mp3File = new File(getCacheDir(), "audio.mp3");
+
+        try(OutputStream out = new FileOutputStream(mp3File)){
+            byte[] buffer = new byte[8 * 1_024];
+            int bytesRead;
+            while ((bytesRead = data.read(buffer)) != -1) {
+                out.write(buffer, 0, bytesRead);
+            }
+            mp.reset();
+            mp.setOnPreparedListener(MediaPlayer::start);
+            mp.setDataSource(new FileInputStream(mp3File).getFD());
+            mp.prepareAsync();
+        } catch(IOException ioe){
+            Log.e(TAG,"Error writing audio file");
+        }
+
+    }
+
+    private void setupTranslateButton(){
+
+        translateButton.setOnClickListener(view -> {
+            String taskName = taskNameTextView.getText().toString();
+            String taskDesc = taskDescTextView.getText().toString();
+            String taskStatus = taskStatusTextView.getText().toString();
+
+            Amplify.Predictions.translateText(taskName,
+                result -> {
+                    runOnUiThread(() -> {
+                        Log.i(TAG, "Text translated: " + result.getTranslatedText());
+                        taskNameTextView.setText(result.getTranslatedText());
+                    });
+                },
+                error -> {
+                    runOnUiThread(() -> {
+                        Log.e(TAG, "Error translating text.", error);
+                        if (error instanceof PredictionsException) {
+                            PredictionsException predictionsException = (PredictionsException) error;
+                            Log.e(TAG, "PredictionsException details: " +
+                                predictionsException.getRecoverySuggestion());
+                        }
+                    });
+                }
+            );
+
+            Amplify.Predictions.translateText(taskDesc,
+                result -> {
+                    runOnUiThread(() -> {
+                        Log.i(TAG, "Text translated: " + result.getTranslatedText());
+                        taskDescTextView.setText(result.getTranslatedText());
+                    });
+                },
+                error -> {
+                    runOnUiThread(() -> {
+                        Log.e(TAG, "Error translating text.", error);
+                        if (error instanceof PredictionsException) {
+                            PredictionsException predictionsException = (PredictionsException) error;
+                            Log.e(TAG, "PredictionsException details: " +
+                                predictionsException.getRecoverySuggestion());
+                        }
+                    });
+                }
+            );
+
+            Amplify.Predictions.translateText(taskStatus,
+                result -> {
+                    runOnUiThread(() -> {
+                        Log.i(TAG, "Text translated: " + result.getTranslatedText());
+                        taskStatusTextView.setText(result.getTranslatedText());
+                    });
+                },
+                error -> {
+                    runOnUiThread(() -> {
+                        Log.e(TAG, "Error translating text.", error);
+                        if (error instanceof PredictionsException) {
+                            PredictionsException predictionsException = (PredictionsException) error;
+                            Log.e(TAG, "PredictionsException details: " +
+                                predictionsException.getRecoverySuggestion());
+                        }
+                    });
+                }
+            );
+        });
+
+
+    }
+
+}
 
