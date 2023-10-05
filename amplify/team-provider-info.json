@@ -20,6 +20,9 @@
       },
       "storage": {
         "taskmasterStorage": {}
+      },
+      "analytics": {
+        "taskmasterAnalytics": {}
       }
     }
   }
