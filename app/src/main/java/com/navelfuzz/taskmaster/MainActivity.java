@@ -61,10 +61,17 @@ public class MainActivity extends AppCompatActivity {
     ViewAdapter adapter;
     SharedPreferences preferences;
 
+    // TODO: add the private variables for banner ads and interstitial ads here
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // TODO: add the views for the ads here
+        // bannerAdView = findViewById(R.id.bannerAdView);
+        // interstitialAdButton = findViewById(R.id.MainActivityAddTaskButton);
+        // rewardAdButton = findViewById(R.id.MainActivityRewardAdButton);
 
         logAppStartup();
 
@@ -77,7 +84,31 @@ public class MainActivity extends AppCompatActivity {
         updateTasksListFromDatabase();
         setupRecyclerView();
         //manualS3FileUpload();
+
+        // TODO: call the functions for the banner ads and interstitial ads here
+        // initializeMobileAds();
+        // setupBannerAd();
+        // setupInterstitialAd();
+        // setupInterstitialAdButton(); -> this should be in the button to add task
+        // setupRewardedAd()
+        // setupRewardedAdButton()
+
     }
+
+    // TODO: add necessary function definitions for ads
+
+    // TODO: initializeMobileAds()
+
+    // TODO: setupBannerAd()
+
+    // TODO: setupInterstitialAd() -> connect this to the existing add task button
+
+    // TODO: setupInterstitialAdButton() -> merge this with the existing "add task" button
+
+    // TODO: setupRewardedAd()
+
+    // TODO: setupRewardedAdButton()
+
 
     @Override
     protected void onResume() {
