@@ -29,6 +29,9 @@ import com.amplifyframework.auth.cognito.result.AWSCognitoAuthSignOutResult;
 import com.amplifyframework.auth.options.AuthSignOutOptions;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Team;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.navelfuzz.taskmaster.activities.AddTaskActivity;
 import com.navelfuzz.taskmaster.activities.AllTasksActivity;
 import com.navelfuzz.taskmaster.activities.SettingsActivity;
@@ -86,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         //manualS3FileUpload();
 
         // TODO: call the functions for the banner ads and interstitial ads here
-        // initializeMobileAds();
+        initializeMobileAds();
         // setupBannerAd();
         // setupInterstitialAd();
         // setupInterstitialAdButton(); -> this should be in the button to add task
@@ -98,7 +101,13 @@ public class MainActivity extends AppCompatActivity {
     // TODO: add necessary function definitions for ads
 
     // TODO: initializeMobileAds()
-
+    private void initializeMobileAds() {
+        MobileAds.initialize(this, new OnInitializationCompleteListener(){
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus){
+            }
+        });
+    }
     // TODO: setupBannerAd()
 
     // TODO: setupInterstitialAd() -> connect this to the existing add task button

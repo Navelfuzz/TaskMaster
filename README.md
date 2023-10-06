@@ -76,6 +76,10 @@ Screenshots for current lab always at bottom of this page
 
 ### Class 42: Monetization And AdMob Ads
 
+Test ads ID for android interstitial ads: `ca-app-pub-3940256099942544/1033173712`
+Test ads ID for android banner ads: `ca-app-pub-3940256099942544/6300978111`
+Test ads ID for android rewarded ads: `ca-app-pub-3940256099942544/5224354917`
+
 ### Class 41: Analytics & Text to Speech
 *Implemented on Branch lab41b*
 

@@ -27,3 +27,23 @@ When the user clicks the close button, the user should see their reward in a tex
 
 ## Documentation
 Update your daily change log with today’s changes.
+
+### Info for AdMob
+
+Goes into the AndroidManifest.xml file
+
+    <manifest>
+      <application>
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"/>
+      </application>
+    </manifest>
+
+
+Below is the official AdMob account info
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5407008914078918~8622600249" />
