@@ -47,3 +47,11 @@ Below is the official AdMob account info
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5407008914078918~8622600249" />
+
+### Screenshots
+
+<img src="screenshots/lab42/bannerAd.png" alt="banner on main" width="200"/>
+
+<img src="screenshots/lab42/interstitialAd.png" alt="interstitial play" width="200"/>
+
+<img src="screenshots/lab42/rewardAd.png" alt="reward star" width="200"/>
