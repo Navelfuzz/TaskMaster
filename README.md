@@ -12,6 +12,7 @@
 * [Lab 37: S3 Image Uploads](#class-37-s3-image-uploads)
 * [lab 39: Location](#class-39-location)
 * [Lab 41: Analytics & Text to Speech](#class-41-analytics-and-text-to-speech)
+* [Lab 42: Monetization And AdMob Ads](#class-42-monetization-and-admob-ads)
 
 ___
 
@@ -29,6 +30,7 @@ ___
 * [Lab 37: S3 Image Uploads](/readme-catalog/lab37.md)
 * [lab 39: Location](/readme-catalog/lab39.md)
 * [Lab 41: Analytics & Text to Speech](/readme-catalog/lab41.md)
+* [Lab 42: Monetization And AdMob Ads](/readme-catalog/lab42.md)
 
 ___
 
@@ -71,6 +73,17 @@ ___
 
 ## Change Log
 Screenshots for current lab always at bottom of this page
+
+### Class 42: Monetization And AdMob Ads
+
+added star button for rewarded ads
+added play button for interstitial
+added banner to bottom
+
+
+Test ads ID for android interstitial ads: `ca-app-pub-3940256099942544/1033173712`
+Test ads ID for android banner ads: `ca-app-pub-3940256099942544/6300978111`
+Test ads ID for android rewarded ads: `ca-app-pub-3940256099942544/5224354917`
 
 ### Class 41: Analytics & Text to Speech
 *Implemented on Branch lab41b*

@@ -30,7 +30,7 @@
         android:id="@+id/MainActivityAddTaskButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="25dp"
         android:text="@string/add_task"
         app:layout_constraintEnd_toStartOf="@+id/MainActivityAllTasksButton"
         app:layout_constraintHorizontal_bias="0.432"
@@ -41,7 +41,7 @@
         android:id="@+id/MainActivityAllTasksButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="64dp"
         android:text="@string/all_tasks"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,39 +58,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_manage" />
 
-<!--    <Button-->
-<!--        android:id="@+id/MainActivityViewTaskOneButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="60dp"-->
-<!--        android:minWidth="240dp"-->
-<!--        android:text="@string/taskOne"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/MainActivityImageView" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/MainActivityViewTaskTwoButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        android:minWidth="240dp"-->
-<!--        android:text="@string/taskTwo"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/MainActivityViewTaskOneButton" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/MainActivityViewTaskThreeButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        android:minWidth="240dp"-->
-<!--        android:text="@string/taskThree"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/MainActivityViewTaskTwoButton" />-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/MainActivityTaskRecyclerView"
         android:layout_width="296dp"
@@ -101,4 +68,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MainActivityTextView" />
 
+    <ImageView
+        android:id="@+id/MainActivityRewardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="64dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <ImageView
+        android:id="@+id/MainActivityInterstitialAdButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="104dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerAdView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.google.android.gms.ads.AdView>
 </androidx.constraintlayout.widget.ConstraintLayout>
